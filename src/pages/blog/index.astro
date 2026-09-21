@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Insights" description="Data analytics and BI insights for East African businesses, SACCOs, and NGOs from the Erdem team.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Insights</p>
+      <h1>Practical intelligence for <span style="color:var(--cyan);">data-driven organizations.</span></h1>
+      <p style="margin-top:16px;">No filler. Every article is based on real work across East African businesses, SACCOs, and NGOs.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <a href="/blog/power-bi-vs-qlik-east-africa" class="card fade-up" style="padding:28px;display:block;color:inherit;">
+        <span class="tag" style="margin-bottom:14px;display:inline-block;">Tools</span>
+        <h3 style="color:var(--white);margin-bottom:10px;line-height:1.4;">Qlik Sense vs Power BI: Which is Right for East African Businesses?</h3>
+        <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.6;margin-bottom:16px;">Both platforms deliver powerful dashboards — but for SMEs and financial institutions in Kenya, the right choice comes down to five factors most comparisons ignore.</p>
+        <span style="font-size:0.85rem;font-weight:600;color:var(--cyan);">Read Article →</span>
+      </a>
+      <a href="/blog/sacco-sasra-dashboard" class="card fade-up" style="padding:28px;display:block;color:inherit;">
+        <span class="tag" style="margin-bottom:14px;display:inline-block;">SACCOs</span>
+        <h3 style="color:var(--white);margin-bottom:10px;line-height:1.4;">How SACCOs Can Meet SASRA Reporting Requirements with Dashboards</h3>
+        <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.6;margin-bottom:16px;">SASRA compliance reporting is one of the most time-consuming recurring obligations for SACCOs. Here's how a data pipeline cuts it from weeks to hours.</p>
+        <span style="font-size:0.85rem;font-weight:600;color:var(--cyan);">Read Article →</span>
+      </a>
+      <a href="/blog/loan-portfolio-monitoring-microfinance" class="card fade-up" style="padding:28px;display:block;color:inherit;">
+        <span class="tag" style="margin-bottom:14px;display:inline-block;">Microfinance</span>
+        <h3 style="color:var(--white);margin-bottom:10px;line-height:1.4;">Automating Loan Portfolio Monitoring for Microfinance Institutions</h3>
+        <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.6;margin-bottom:16px;">Most MFIs in East Africa are still monitoring their portfolios from static Excel files. Here's how to close that visibility gap with automation.</p>
+        <span style="font-size:0.85rem;font-weight:600;color:var(--cyan);">Read Article →</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+<style>
+@media(max-width:900px){[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}}
+</style>

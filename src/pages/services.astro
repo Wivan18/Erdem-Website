@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+const services = [
+  { num:'01', id:'dashboards', img:'/images/service-01.jpg', title:'Business Dashboards & Analysis', tagline:'Turn your spreadsheets into simple, visual reports.', desc:'We build clear, interactive dashboards in Power BI and Looker Studio that replace manual Excel updates. Clients get real-time visibility into sales, inventory, branch performance, loan portfolios, and project outcomes — all in one place, updated automatically.', why:'Anchor service and entry point for most client relationships.', tags:['SACCOs','Manufacturing','NGOs','Multi-Branch Retail'] },
+  { num:'02', id:'automation', img:'/images/service-02.png', title:'AI Agents & Data Automation', tagline:'Let AI handle the repetitive work.', desc:'We design smart AI agents that automate routine data tasks — generating reports, analyzing customer feedback, sending alerts when sales shift or stock runs low, and eliminating manual data entry. Faster insights, less effort, more time for strategy.', why:'Saves clients 20+ staff hours per month.', tags:['All Sectors','Finance','Distribution'] },
+  { num:'03', id:'predictive', img:'/images/service-03.png', title:'Predictive Modeling', tagline:'Plan ahead with confidence.', desc:"We build forecasting models that help clients anticipate what's coming — next quarter's sales, future stock needs, loan default risk, or project impact. Designed to be interpretable and actionable, not just technically sophisticated.", why:'Critical for financial institutions managing credit risk and SMEs managing inventory.', tags:['SACCOs','Microfinance','Agribusiness'] },
+  { num:'04', id:'location', img:'/images/service-04.png', title:'Location-Based Business Insights', tagline:'Know where your business performs best.', desc:'For businesses with multiple branches or NGOs running regional programs, we use geospatial data mapping to compare performance across locations. See which areas are thriving, where opportunities are being lost, and where to grow next.', why:'Strong differentiator for multi-branch retail, distribution networks, and regional NGO programs.', tags:['Multi-Branch Retail','Distribution','NGOs'] },
+  { num:'05', id:'survey', img:'/images/service-05.jpg', title:'Survey & Feedback Analysis', tagline:'Turn opinions into insights you can act on.', desc:'We analyze survey responses, customer feedback, and community interviews to surface clear themes and recommendations. Using AI, we rapidly summarize open-ended responses and highlight what matters most.', why:'Reduces weeks of manual analysis to hours.', tags:['NGOs','Development Organizations','Research'] },
+  { num:'06', id:'data', img:'/images/service-06.jpg', title:'Data Collection & Organization', tagline:'Set the foundation for good decisions.', desc:'We help organizations collect and structure their data using digital forms, simple databases, and automated collection pipelines. We ensure data is clean, consistent, and ready for analysis.', why:'Often the prerequisite before dashboards can be built — creates immediate stickiness.', tags:['NGOs','SMEs','Field Programs'] },
+];
+---
+<Layout title="Services" description="Erdem offers six integrated data analytics and BI service lines for East African businesses, SACCOs, and NGOs.">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">What We Do</p>
+      <h1>Six service lines.<br/><span style="color:var(--cyan);">One platform partner.</span></h1>
+      <p style="margin-top:16px;">Each service is designed to stand alone or layer with others as your needs mature. Most relationships start with dashboards and grow from there.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        {services.map(s => (
+          <div class="svc-card fade-up" id={s.id}>
+            <img src={s.img} alt={s.title} />
+            <div class="svc-card-body">
+              <span class="tag" style="margin-bottom:12px;display:inline-block;">{s.num}</span>
+              <h3 style="margin-bottom:8px;">{s.title}</h3>
+              <p style="font-style:italic;color:var(--cyan);font-size:0.85rem;margin-bottom:10px;">{s.tagline}</p>
+              <p>{s.desc}</p>
+              <div class="accent-bar" style="margin-top:14px;margin-bottom:14px;">{s.why}</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                {s.tags.map(t => <span class="tag" style="font-size:0.68rem;">{t}</span>)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-mid" style="text-align:center;">
+    <div class="container">
+      <h2 style="margin-bottom:14px;">Not sure which service fits?</h2>
+      <p style="color:var(--text-muted);max-width:440px;margin:0 auto 32px;">Tell us about your organization and we'll recommend exactly where to start.</p>
+      <a href="/contact" class="btn btn-cyan">Talk to Us →</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+@media(max-width:900px){ [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important} }
+</style>

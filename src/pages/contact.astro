@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact" description="Get in touch with Erdem Analytics to discuss your data analytics and business intelligence needs.">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Get in Touch</p>
+      <h1>Let's talk about <span style="color:var(--cyan);">your data.</span></h1>
+      <p style="margin-top:16px;">Tell us about your organization and the challenges you're facing. We respond within one business day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start;">
+
+        <div>
+          <h3 style="color:var(--white);margin-bottom:8px;">Send us a message</h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:32px;">We'll come back with a clear view of what a Erdem engagement could look like for your organization.</p>
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:20px;">
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none;"><label>Don't fill: <input name="bot-field" /></label></p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" name="name" required placeholder="Jane Mwangi" />
+              </div>
+              <div class="form-group">
+                <label>Organization *</label>
+                <input type="text" name="organization" required placeholder="Nairobi SACCO Ltd" />
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" required placeholder="jane@organization.co.ke" />
+              </div>
+              <div class="form-group">
+                <label>Sector</label>
+                <select name="sector">
+                  <option value="">Select your sector</option>
+                  <option>SACCO / Microfinance</option>
+                  <option>Manufacturing</option>
+                  <option>Distribution</option>
+                  <option>Multi-Branch Retail</option>
+                  <option>Insurance</option>
+                  <option>NGO / Development</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Service of Interest</label>
+              <select name="service">
+                <option value="">What are you looking for?</option>
+                <option>Business Dashboards & Analysis</option>
+                <option>AI Agents & Data Automation</option>
+                <option>Predictive Modeling</option>
+                <option>Location-Based Insights</option>
+                <option>Survey & Feedback Analysis</option>
+                <option>Data Collection & Organization</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tell us about your data challenge *</label>
+              <textarea name="message" required rows="5" placeholder="What data are you working with? What decisions are you struggling to make? What's currently taking too long?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-cyan" style="width:100%;justify-content:center;padding:15px;">Send Message →</button>
+          </form>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div class="card" style="padding:28px;">
+            <h4 style="color:var(--white);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;">Direct Contact</h4>
+            <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <div style="font-size:0.72rem;color:var(--text-dim);margin-bottom:3px;">Email</div>
+                <a href="mailto:hello@erdem.co.ke" style="font-size:0.92rem;font-weight:600;color:var(--cyan);">hello@erdem.co.ke</a>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+              <div>
+                <div style="font-size:0.72rem;color:var(--text-dim);margin-bottom:3px;">WhatsApp</div>
+                <a href="https://wa.me/254716404849?text=Hi%20Erdem%2C%20I%27d%20like%20to%20discuss%20my%20data%20analytics%20needs." target="_blank" rel="noopener" style="font-size:0.92rem;font-weight:600;color:var(--cyan);">+254 716 404 849</a>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <div style="font-size:0.72rem;color:var(--text-dim);margin-bottom:3px;">Location</div>
+                <div style="font-size:0.92rem;font-weight:600;color:var(--white);">Nairobi, Kenya</div>
+                <div style="font-size:0.78rem;color:var(--text-dim);margin-top:2px;">Serving all of East Africa</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:28px;border-color:var(--border-cyan);">
+            <h4 style="color:var(--white);font-size:0.85rem;margin-bottom:18px;">What happens next?</h4>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;">
+              <div style="min-width:24px;height:24px;background:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;color:var(--bg-dark);">1</div>
+              <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.6;">We review your message and reply within one business day.</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;">
+              <div style="min-width:24px;height:24px;background:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;color:var(--bg-dark);">2</div>
+              <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.6;">Short discovery call to understand your data and goals.</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="min-width:24px;height:24px;background:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;color:var(--bg-dark);">3</div>
+              <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.6;">Clear proposal — what we build, timeline, and retainer structure.</p>
+            </div>
+          </div>
+
+          <a href="https://wa.me/254716404849?text=Hi%20Erdem%2C%20I%27d%20like%20to%20discuss%20my%20data%20analytics%20needs." target="_blank" rel="noopener" class="btn btn-cyan" style="width:100%;justify-content:center;padding:15px;text-align:center;">
+            💬 Chat on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+<style>
+@media(max-width:900px){
+  [style*="grid-template-columns:1fr 360px"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+}
+</style>

@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="About" description="Erdem Analytics — Built in Nairobi for East Africa. Data analytics and business intelligence on a retainer basis.">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">About Erdem</p>
+      <h1>Built in Nairobi.<br/><span style="color:var(--cyan);">Built for East Africa.</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start;">
+        <div class="prose">
+          <p class="section-label">The Company</p>
+          <h2 style="margin-bottom:16px;color:var(--white);">Data analytics and intelligence —<br/>on a retainer, not on request.</h2>
+          <div class="divider-line"></div>
+          <p>Erdem is a data analytics and business intelligence company based in Kenya, built to serve organizations across East Africa that are data-rich but insight-poor.</p>
+          <p>The core premise is straightforward: most SMEs, financial institutions, and NGOs generate significant operational data every day — from loan repayments and sales figures to inventory movements and project outcomes — but lack the tools, skills, or bandwidth to turn that data into decisions.</p>
+          <p>Erdem bridges that gap. We take raw, often scattered data and transform it into clear, actionable intelligence — delivered through dashboards, automated reports, predictive models, and AI-driven workflows that clients can actually use.</p>
+          <p>We operate as a <strong>platform provider, not a one-off consultancy</strong>. We don't build dashboards on request and disappear. We embed ourselves in a client's operations on a retainer basis, becoming a recurring fixture in how they monitor performance, catch problems early, and plan ahead.</p>
+        </div>
+        <div>
+          <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-cyan);">
+            <img src="/images/ivan.jpg" alt="Ivan Wekesa — Founder & Lead Analyst" style="width:100%;height:340px;object-fit:cover;object-position:top;display:block;" />
+          </div>
+          <div style="padding:20px 0 0;">
+            <div style="font-size:1.15rem;font-weight:800;color:var(--white);">Ivan Wekesa</div>
+            <div style="font-size:0.87rem;color:var(--cyan);margin:4px 0 12px;">Founder & Lead Analyst</div>
+            <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.7;">Data analytics professional based in Nairobi with deep expertise in Power BI, Python, and BI architecture. He founded Erdem to bring enterprise-grade data infrastructure to East African organizations that have historically had to manage without it.</p>
+            <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;">
+              <span class="tag">Power BI</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Qlik Sense</span>
+              <span class="tag">ML</span>
+              <span class="tag">JKUAT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <p class="section-label" style="text-align:center;">Our Approach</p>
+      <h2 style="text-align:center;max-width:540px;margin:0 auto 48px;">Three principles that define how we work.</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div class="card fade-up" style="padding:32px;">
+          <div style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.1em;margin-bottom:14px;">01</div>
+          <h3 style="color:var(--white);margin-bottom:12px;">Platform, not project</h3>
+          <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.7;">We build data infrastructure that grows with your organization — not dashboards that collect dust after delivery.</p>
+        </div>
+        <div class="card fade-up" style="padding:32px;">
+          <div style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.1em;margin-bottom:14px;">02</div>
+          <h3 style="color:var(--white);margin-bottom:12px;">Actionable, not academic</h3>
+          <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.7;">Our models and dashboards are built to drive decisions. If a client can't act on what we build, we haven't done our job.</p>
+        </div>
+        <div class="card fade-up" style="padding:32px;">
+          <div style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.1em;margin-bottom:14px;">03</div>
+          <h3 style="color:var(--white);margin-bottom:12px;">Regional depth</h3>
+          <p style="font-size:0.87rem;color:var(--text-muted);line-height:1.7;">We understand SASRA, CBK, M-Pesa, and East African market realities. That context is our competitive advantage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-mid" style="text-align:center;">
+    <div class="container">
+      <h2 style="margin-bottom:14px;">Ready to work with us?</h2>
+      <p style="color:var(--text-muted);max-width:420px;margin:0 auto 32px;">Get in touch and we'll talk through what a Erdem engagement looks like for your organization.</p>
+      <a href="/contact" class="btn btn-cyan">Talk to Us →</a>
+    </div>
+  </section>
+</Layout>
+<style>
+@media(max-width:900px){
+  [style*="grid-template-columns:1fr 360px"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
+}
+</style>
