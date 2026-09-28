@@ -142,9 +142,9 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div id="tabContent">
         <div class="tab-panel active" data-panel="0"><div class="panel-img"><img src="/images/service-01.jpg" alt="Business Dashboards"/></div><h3 style="color:var(--white);">Business Dashboards & Analysis</h3><p>We build clear, interactive dashboards in Power BI and Looker Studio that replace manual Excel updates. Real-time visibility into sales, inventory, branch performance, and loan portfolios — in one place, updated automatically.</p><div class="accent-bar">Anchor service — entry point for most client relationships.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">SACCOs</span><span class="tag">Manufacturing</span><span class="tag">NGOs</span><span class="tag">Multi-Branch</span></div></div>
-        <div class="tab-panel" data-panel="1"><div class="panel-img"><img src="/images/service-02.png" alt="AI Automation"/></div><h3 style="color:var(--white);">AI Agents & Data Automation</h3><p>Smart AI agents that automate routine data tasks — generating reports, analyzing feedback, sending alerts when sales shift or stock runs low, and eliminating manual data entry.</p><div class="accent-bar">Saves clients 20+ staff hours per month.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">All Sectors</span><span class="tag">Finance</span><span class="tag">Distribution</span></div></div>
-        <div class="tab-panel" data-panel="2"><div class="panel-img"><img src="/images/service-03.png" alt="Predictive Modeling"/></div><h3 style="color:var(--white);">Predictive Modeling</h3><p>Forecasting models that help clients anticipate what's coming — next quarter's sales, future stock needs, loan default risk. Designed to be interpretable and actionable, not just technically sophisticated.</p><div class="accent-bar">Critical for financial institutions managing credit risk.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">SACCOs</span><span class="tag">Microfinance</span><span class="tag">Agribusiness</span></div></div>
-        <div class="tab-panel" data-panel="3"><div class="panel-img"><img src="/images/service-04.png" alt="Location Insights"/></div><h3 style="color:var(--white);">Location-Based Business Insights</h3><p>Geospatial data mapping to compare performance across branches or regions. See which areas are thriving, where opportunities are being lost, and where to grow next.</p><div class="accent-bar">Strong differentiator for multi-branch retail and distribution networks.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">Multi-Branch Retail</span><span class="tag">Distribution</span><span class="tag">NGOs</span></div></div>
+        <div class="tab-panel" data-panel="1"><div class="panel-img"><img src="/images/service-02.jpg" alt="AI Automation"/></div><h3 style="color:var(--white);">AI Agents & Data Automation</h3><p>Smart AI agents that automate routine data tasks — generating reports, analyzing feedback, sending alerts when sales shift or stock runs low, and eliminating manual data entry.</p><div class="accent-bar">Saves clients 20+ staff hours per month.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">All Sectors</span><span class="tag">Finance</span><span class="tag">Distribution</span></div></div>
+        <div class="tab-panel" data-panel="2"><div class="panel-img"><img src="/images/service-03.jpg" alt="Predictive Modeling"/></div><h3 style="color:var(--white);">Predictive Modeling</h3><p>Forecasting models that help clients anticipate what's coming — next quarter's sales, future stock needs, loan default risk. Designed to be interpretable and actionable, not just technically sophisticated.</p><div class="accent-bar">Critical for financial institutions managing credit risk.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">SACCOs</span><span class="tag">Microfinance</span><span class="tag">Agribusiness</span></div></div>
+        <div class="tab-panel" data-panel="3"><div class="panel-img"><img src="/images/service-04.jpg" alt="Location Insights"/></div><h3 style="color:var(--white);">Location-Based Business Insights</h3><p>Geospatial data mapping to compare performance across branches or regions. See which areas are thriving, where opportunities are being lost, and where to grow next.</p><div class="accent-bar">Strong differentiator for multi-branch retail and distribution networks.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">Multi-Branch Retail</span><span class="tag">Distribution</span><span class="tag">NGOs</span></div></div>
         <div class="tab-panel" data-panel="4"><div class="panel-img"><img src="/images/service-05.jpg" alt="Survey Analysis"/></div><h3 style="color:var(--white);">Survey & Feedback Analysis</h3><p>We analyze survey responses, customer feedback, and community interviews using AI to surface clear themes. Ideal for NGOs producing donor reports or businesses improving their products.</p><div class="accent-bar">Reduces weeks of manual analysis to hours.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">NGOs</span><span class="tag">Development</span><span class="tag">Research</span></div></div>
         <div class="tab-panel" data-panel="5"><div class="panel-img"><img src="/images/service-06.jpg" alt="Data Collection"/></div><h3 style="color:var(--white);">Data Collection & Organization</h3><p>Digital forms, simple databases, and automated collection pipelines that ensure your data is clean, consistent, and ready for analysis.</p><div class="accent-bar">Often the prerequisite before dashboards can be built — creates immediate stickiness.</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">NGOs</span><span class="tag">SMEs</span><span class="tag">Field Programs</span></div></div>
       </div>
@@ -309,8 +309,8 @@ function toY(v){return padT+(lc.height-padT-padB)*(1-(v-minV)/(maxV-minV));}
 
 let drawProgress=0; // 0→1 for initial draw
 let t=0;            // time offset for continuous animation
-let phase='drawing'; // 'drawing' | 'living'
-const drawDur=2000;
+let phase='drawing';
+const drawDur=4500;
 let drawStart=null;
 
 function drawChart(now){
@@ -320,7 +320,7 @@ function drawChart(now){
     drawProgress=Math.min((now-drawStart)/drawDur,1);
     if(drawProgress>=1){ phase='living'; }
   } else {
-    t+=0.018; // slow continuous drift
+    t+=0.008; // gentle continuous drift
   }
 
   lCtx.clearRect(0,0,lcW,lc.height);
@@ -344,11 +344,11 @@ function drawChart(now){
 
   // Build animated data
   function liveNoise(base,i,amp){
-    return base+(Math.sin(t*0.9+i*0.7)*amp)+(Math.cos(t*0.5+i*1.2)*amp*0.5);
+    return base+(Math.sin(t*0.7+i*0.6)*amp)+(Math.cos(t*0.4+i*1.1)*amp*0.7);
   }
-  const defData  = baseDefault.map((v,i)  => liveNoise(v,i,i>=4?0.12:0.08));
-  const indData  = baseIndustry.map((v,i) => liveNoise(v,i,0.07));
-  const targData = baseTarget.map((v,i)   => liveNoise(v,i,0.02));
+  const defData  = baseDefault.map((v,i)  => liveNoise(v,i,i>=4?0.35:0.25));
+  const indData  = baseIndustry.map((v,i) => liveNoise(v,i,0.18));
+  const targData = baseTarget.map((v,i)   => liveNoise(v,i,0.06));
 
   function drawLine(data,color,dashed=false,progress=1){
     const maxI=Math.floor((data.length-1)*Math.min(progress*1.1,1));
