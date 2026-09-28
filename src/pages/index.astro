@@ -1,257 +1,470 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+<Layout title="Home" description="Erdem Analytics — We transform raw data into clear dashboards, automated reports, and predictive models for East African businesses, SACCOs, and NGOs.">
 
-<Layout title="Home" description="IONIC — Data Analytics & Business Intelligence. We transform raw operational data into actionable intelligence for East African businesses, SACCOs, and NGOs.">
-
-  <!-- ── HERO ──────────────────────────────────────────────────── -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <p class="section-label" style="color:var(--cyan);">Data Analytics & Business Intelligence</p>
-        <h1>Your data is running your business.<br /><span class="hero-accent">Are you running it?</span></h1>
-        <p class="hero-sub">
-          Most organizations in East Africa are data-rich but insight-poor. IONIC transforms
-          raw, scattered data into clear dashboards, automated reports, and predictive models —
-          delivered on retainer, not on request.
-        </p>
-        <div class="hero-actions">
-          <a href="/case-studies" class="btn btn-primary">See Our Work</a>
-          <a href="/contact" class="btn btn-white">Talk to Us</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-stat">
-            <span class="stat-num">7 days</span>
-            <span class="stat-arrow">→</span>
-            <span class="stat-num accent">1 hour</span>
-          </div>
-          <p class="stat-label">Monthly reporting time for a Nairobi manufacturer</p>
-        </div>
-        <div class="hero-card">
-          <div class="hero-stat">
-            <span class="stat-num accent">31%</span>
-          </div>
-          <p class="stat-label">Reduction in loan defaults for a SACCO using our predictive model</p>
-        </div>
-        <div class="hero-card">
-          <div class="hero-stat">
-            <span class="stat-num accent">20+</span>
-          </div>
-          <p class="stat-label">Staff hours saved per month through AI-driven automation</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PROBLEM ────────────────────────────────────────────────── -->
-  <section class="section section-alt">
-    <div class="container">
-      <p class="section-label" style="text-align:center;">The Problem We Solve</p>
-      <h2 style="text-align:center; max-width:600px; margin:0 auto 48px;">You have the data. You just can't see it clearly.</h2>
-      <div class="problem-grid">
-        <div class="problem-item">
-          <div class="problem-icon">📊</div>
-          <h3>Scattered Data</h3>
-          <p>Reports live in disconnected spreadsheets, paper registers, and email threads. Getting a single view of your business takes days.</p>
-        </div>
-        <div class="problem-item">
-          <div class="problem-icon">⏱</div>
-          <h3>Manual Reporting</h3>
-          <p>Your team spends weeks compiling reports that are already outdated by the time they reach management. No pipeline — just effort.</p>
-        </div>
-        <div class="problem-item">
-          <div class="problem-icon">🔮</div>
-          <h3>No Forward Visibility</h3>
-          <p>You react to problems after they happen. Without predictive models, defaults, stockouts, and revenue dips only appear once the damage is done.</p>
-        </div>
-        <div class="problem-item">
-          <div class="problem-icon">📍</div>
-          <h3>No Intelligence Layer</h3>
-          <p>Data exists but nothing converts it into alerts, decisions, or strategy. The gap between your data and your decisions is costing you money.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── POSITIONING ────────────────────────────────────────────── -->
-  <section class="section section-dark">
-    <div class="container positioning-inner">
+<!-- ═══════════════════════════════════════════════════
+     HERO — Full viewport, animated chart background
+═══════════════════════════════════════════════════ -->
+<section id="hero" style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:68px 0 0;">
+  <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+  <div class="container" style="position:relative;z-index:2;padding-top:40px;padding-bottom:60px;">
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:center;">
       <div>
-        <p class="section-label" style="color:var(--cyan);">How IONIC Is Different</p>
-        <h2 style="color:var(--white); margin-bottom:24px;">A platform partner, not a one-off consultant.</h2>
-        <p style="color:rgba(255,255,255,0.75); font-size:1.05rem; max-width:480px; line-height:1.8;">
-          We don't build dashboards on request and disappear. IONIC embeds in your operations
-          on a monthly retainer — becoming a recurring part of how you monitor performance,
-          catch problems early, and plan ahead. Our methodology and white-labeled architecture
-          are your competitive advantage.
+        <div id="hero-pill" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,224,0.08);border:1px solid rgba(0,212,224,0.2);border-radius:99px;padding:5px 14px;margin-bottom:28px;opacity:0;transform:translateY(12px);transition:all 0.6s ease 0.2s;">
+          <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite;"></div>
+          <span style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.08em;">ERDEM ANALYTICS — NAIROBI, KENYA</span>
+        </div>
+        <h1 id="hero-h1" style="color:var(--white);margin-bottom:24px;opacity:0;transform:translateY(16px);transition:all 0.7s ease 0.4s;">
+          Most businesses are<br/>
+          <span class="cyan">drowning in data</span><br/>
+          <span style="color:rgba(255,255,255,0.35);">they can't read.</span>
+        </h1>
+        <p id="hero-p" style="font-size:1.05rem;max-width:460px;line-height:1.85;margin-bottom:36px;opacity:0;transform:translateY(12px);transition:all 0.6s ease 0.65s;">
+          Erdem transforms raw, scattered data into clear dashboards, automated reports,
+          and predictive models — embedded in your operations on retainer, not on request.
         </p>
-        <a href="/who-we-serve" class="btn btn-white" style="margin-top:32px;">See Who We Work With</a>
-      </div>
-      <div class="positioning-stats">
-        <div class="pos-stat">
-          <span class="pos-num">3</span>
-          <span class="pos-label">Client tiers served — SACCOs, SMEs, NGOs</span>
-        </div>
-        <div class="pos-stat">
-          <span class="pos-num">6</span>
-          <span class="pos-label">Integrated service lines</span>
-        </div>
-        <div class="pos-stat">
-          <span class="pos-num">East Africa</span>
-          <span class="pos-label">Based in Nairobi. Built for the region.</span>
+        <div id="hero-btns" style="display:flex;gap:14px;flex-wrap:wrap;opacity:0;transform:translateY(10px);transition:all 0.6s ease 0.85s;">
+          <a href="/case-studies" class="btn btn-cyan">See Our Work →</a>
+          <a href="/contact"      class="btn btn-ghost">Talk to Us</a>
         </div>
       </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div class="stat-box" id="s1" style="opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.6s;">
+          <span class="stat-lbl">Reporting time — Nairobi manufacturer</span>
+          <span class="stat-val">7 days → 1 hr</span>
+        </div>
+        <div class="stat-box" id="s2" style="opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.75s;">
+          <span class="stat-lbl">Default rate reduction — SACCO client</span>
+          <span class="stat-val" data-target="31" data-suffix="%" class="counter-val">0%</span>
+        </div>
+        <div class="stat-box" id="s3" style="opacity:0;transform:translateX(20px);transition:all 0.5s ease 0.9s;">
+          <span class="stat-lbl">Staff hours saved monthly via AI</span>
+          <span class="stat-val" data-target="20" data-suffix="+ hrs" class="counter-val">0 hrs</span>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- ── SERVICES ───────────────────────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <p class="section-label">What We Do</p>
-      <h2 style="margin-bottom:8px;">Six integrated service lines.</h2>
-      <div class="divider"></div>
-      <div class="services-grid">
-        <a href="/services#dashboards" class="card service-card">
-          <div class="service-num">01</div>
-          <h3>Business Dashboards & Analysis</h3>
-          <p>Turn spreadsheets into live, interactive reports. Sales, inventory, loans, branch performance — in one place, updated automatically.</p>
-          <span class="service-tag">Anchor Service</span>
-        </a>
-        <a href="/services#automation" class="card service-card">
-          <div class="service-num">02</div>
-          <h3>AI Agents & Data Automation</h3>
-          <p>Let AI handle repetitive data tasks — report generation, alert triggers, feedback analysis, and data entry elimination.</p>
-          <span class="service-tag">Saves 20+ hrs/month</span>
-        </a>
-        <a href="/services#predictive" class="card service-card">
-          <div class="service-num">03</div>
-          <h3>Predictive Modeling</h3>
-          <p>Forecast next quarter's sales, anticipate stock needs, or score loan default risk — before it becomes a problem.</p>
-          <span class="service-tag">Plan Ahead</span>
-        </a>
-        <a href="/services#location" class="card service-card">
-          <div class="service-num">04</div>
-          <h3>Location-Based Insights</h3>
-          <p>Compare branch and regional performance on a map. See where your business thrives and where to grow next.</p>
-          <span class="service-tag">Multi-Branch</span>
-        </a>
-        <a href="/services#survey" class="card service-card">
-          <div class="service-num">05</div>
-          <h3>Survey & Feedback Analysis</h3>
-          <p>Reduce weeks of manual analysis to hours. AI surfaces clear themes from open-ended responses.</p>
-          <span class="service-tag">NGO & Research</span>
-        </a>
-        <a href="/services#data" class="card service-card">
-          <div class="service-num">06</div>
-          <h3>Data Collection & Organization</h3>
-          <p>Digital forms, structured databases, and automated pipelines that make your data clean and ready for analysis.</p>
-          <span class="service-tag">Foundation Layer</span>
-        </a>
+    <!-- Hero line chart — "Loan Default Rate dropping after Erdem" -->
+    <div id="hero-chart" style="margin-top:44px;background:rgba(10,31,36,0.88);border:1px solid rgba(0,212,224,0.15);border-radius:var(--r-lg);padding:22px 26px;opacity:0;transform:translateY(16px);transition:all 0.7s ease 1.05s;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <div>
+          <div style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.1em;margin-bottom:3px;">LOAN DEFAULT RATE TREND — POST ERDEM IMPLEMENTATION</div>
+          <div style="font-size:0.8rem;color:var(--muted);">Defaults drop 31% within 6 months of predictive model deployment</div>
+        </div>
+        <div style="display:flex;gap:18px;">
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:2px;background:var(--cyan);border-radius:1px;"></div><span style="font-size:0.72rem;color:var(--muted);">Default Rate</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:2px;background:var(--teal);border-radius:1px;"></div><span style="font-size:0.72rem;color:var(--muted);">Industry Avg</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:2px;background:rgba(255,255,255,0.2);border-radius:1px;border-top:2px dashed rgba(255,255,255,0.2);"></div><span style="font-size:0.72rem;color:var(--muted);">Target</span></div>
+        </div>
       </div>
-      <div style="text-align:center; margin-top:48px;">
-        <a href="/services" class="btn btn-outline">Explore All Services</a>
+      <canvas id="lineChart" height="130" style="width:100%;display:block;"></canvas>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;">
+        <span style="font-size:0.68rem;color:var(--dim);">Jan</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Feb</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Mar</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Apr</span>
+        <span style="font-size:0.68rem;color:var(--dim);">May — Erdem deployed →</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Jun</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Jul</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Aug</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Sep</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Oct</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Nov</span>
+        <span style="font-size:0.68rem;color:var(--dim);">Dec</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── CASE STUDIES ───────────────────────────────────────────── -->
-  <section class="section section-alt">
-    <div class="container">
-      <p class="section-label">Our Work</p>
-      <h2 style="margin-bottom:8px;">Results that speak for themselves.</h2>
-      <div class="divider"></div>
-      <div class="cases-grid">
-        <a href="/case-studies/feed-manufacturer" class="card case-card">
-          <span class="tag tag-teal" style="margin-bottom:16px;">Manufacturing</span>
-          <h3>From Paper Registers to Remote-Ready Dashboards</h3>
-          <p>A Nairobi animal feed manufacturer reduced monthly reporting from 7 days to 1 hour and now runs their business fully remotely.</p>
-          <div class="case-metric">
-            <span class="metric-val">7 days → 1 hr</span>
-            <span class="metric-label">Reporting time</span>
-          </div>
-        </a>
-        <a href="/case-studies/insurance" class="card case-card">
-          <span class="tag tag-teal" style="margin-bottom:16px;">Insurance</span>
-          <h3>Turning Claims Chaos into Compliance Clarity</h3>
-          <p>An insurance provider automated claims reporting, flagged 18% of their backlog as suspicious, and gained live branch visibility.</p>
-          <div class="case-metric">
-            <span class="metric-val">18%</span>
-            <span class="metric-label">Fraudulent claims flagged</span>
-          </div>
-        </a>
-        <a href="/case-studies/sacco" class="card case-card">
-          <span class="tag tag-teal" style="margin-bottom:16px;">SACCO</span>
-          <h3>From Ledger Books to Loan Intelligence</h3>
-          <p>A Kenyan SACCO automated SASRA compliance, built a default prediction model, and reduced loan defaults by 31% in six months.</p>
-          <div class="case-metric">
-            <span class="metric-val">31%</span>
-            <span class="metric-label">Default rate reduction</span>
-          </div>
-        </a>
-      </div>
-      <div style="text-align:center; margin-top:48px;">
-        <a href="/case-studies" class="btn btn-primary">View All Case Studies</a>
-      </div>
-    </div>
-  </section>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>SACCOs & Microfinance</span><span class="dot">◆</span>
+    <span>Manufacturing & Distribution</span><span class="dot">◆</span>
+    <span>Insurance & Financial Services</span><span class="dot">◆</span>
+    <span>NGOs & Development</span><span class="dot">◆</span>
+    <span>Multi-Branch Retail</span><span class="dot">◆</span>
+    <span>Agribusiness</span><span class="dot">◆</span>
+    <span>SACCOs & Microfinance</span><span class="dot">◆</span>
+    <span>Manufacturing & Distribution</span><span class="dot">◆</span>
+    <span>Insurance & Financial Services</span><span class="dot">◆</span>
+    <span>NGOs & Development</span><span class="dot">◆</span>
+    <span>Multi-Branch Retail</span><span class="dot">◆</span>
+    <span>Agribusiness</span><span class="dot">◆</span>
+  </div>
+</div>
 
-  <!-- ── CTA ────────────────────────────────────────────────────── -->
-  <section class="section cta-section">
-    <div class="container" style="text-align:center;">
-      <p class="section-label" style="color:var(--cyan);">Get Started</p>
-      <h2 style="color:var(--white); max-width:560px; margin:0 auto 16px;">Ready to see what your data can do?</h2>
-      <p style="max-width:480px; margin:0 auto 40px; font-size:1.05rem; color:rgba(255,255,255,0.75);">
-        Tell us about your organization and we will show you exactly what an IONIC engagement looks like for your sector.
-      </p>
-      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="/contact" class="btn btn-white">Talk to Us</a>
-        <a href="/case-studies" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4); color:var(--white);">See Case Studies</a>
+<!-- ═══════════════════════════════════════════════════
+     STORY BEAT 1 — The Problem
+═══════════════════════════════════════════════════ -->
+<section id="problem" class="section s-mid">
+  <div class="container">
+    <span class="label">The Problem We Solve</span>
+    <h2 style="margin-bottom:48px;">You have the data.<br/><span class="cyan">You just can't see it clearly.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <div class="fade-up" style="padding:28px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+        <div style="width:40px;height:40px;border-radius:var(--r-sm);background:var(--cyan-dim);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <h3 style="color:var(--white);margin-bottom:8px;">Scattered Data</h3>
+        <p style="font-size:0.87rem;">Reports in disconnected spreadsheets, paper registers, and email threads. Getting one view takes days.</p>
+      </div>
+      <div class="fade-up" style="padding:28px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+        <div style="width:40px;height:40px;border-radius:var(--r-sm);background:var(--cyan-dim);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 style="color:var(--white);margin-bottom:8px;">Manual Reporting</h3>
+        <p style="font-size:0.87rem;">Weeks compiling reports that are outdated by the time they reach management. No pipeline — just effort.</p>
+      </div>
+      <div class="fade-up" style="padding:28px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+        <div style="width:40px;height:40px;border-radius:var(--r-sm);background:var(--cyan-dim);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 style="color:var(--white);margin-bottom:8px;">No Forward Visibility</h3>
+        <p style="font-size:0.87rem;">You react to problems after they happen. Defaults, stockouts, and dips only appear once the damage is done.</p>
+      </div>
+      <div class="fade-up" style="padding:28px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+        <div style="width:40px;height:40px;border-radius:var(--r-sm);background:var(--cyan-dim);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 style="color:var(--white);margin-bottom:8px;">No Intelligence Layer</h3>
+        <p style="font-size:0.87rem;">Data exists but nothing converts it into alerts, decisions, or strategy. The gap is costing you money.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STORY BEAT 2 — Services (Tabbed)
+═══════════════════════════════════════════════════ -->
+<section id="services" class="section s-alt">
+  <div class="container">
+    <span class="label">What We Do</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;">
+      <h2>Six integrated <span class="cyan">service lines.</span></h2>
+      <a href="/services" class="btn btn-ghost" style="font-size:0.82rem;padding:9px 18px;">All Services →</a>
+    </div>
+    <div class="tabs-wrap fade-up">
+      <div class="tab-list" id="tabList">
+        <button class="tab-btn active" data-tab="0">
+          <span class="t-num">01</span>
+          <span class="t-title">Business Dashboards</span>
+          <span class="t-sub">Live reports replacing Excel</span>
+        </button>
+        <button class="tab-btn" data-tab="1">
+          <span class="t-num">02</span>
+          <span class="t-title">AI Agents & Automation</span>
+          <span class="t-sub">Saves 20+ hrs/month</span>
+        </button>
+        <button class="tab-btn" data-tab="2">
+          <span class="t-num">03</span>
+          <span class="t-title">Predictive Modeling</span>
+          <span class="t-sub">Plan ahead with confidence</span>
+        </button>
+        <button class="tab-btn" data-tab="3">
+          <span class="t-num">04</span>
+          <span class="t-title">Location Insights</span>
+          <span class="t-sub">Branch performance on a map</span>
+        </button>
+        <button class="tab-btn" data-tab="4">
+          <span class="t-num">05</span>
+          <span class="t-title">Survey Analysis</span>
+          <span class="t-sub">Weeks of work in hours</span>
+        </button>
+        <button class="tab-btn" data-tab="5">
+          <span class="t-num">06</span>
+          <span class="t-title">Data Collection</span>
+          <span class="t-sub">Foundation layer</span>
+        </button>
+      </div>
+      <div id="tabContent">
+        <div class="tab-panel active" data-panel="0">
+          <div class="panel-img"><img src="/images/service-01.jpg" alt="Business Dashboards"/></div>
+          <h3 style="color:var(--white);">Business Dashboards & Analysis</h3>
+          <p>We build clear, interactive dashboards in Power BI and Looker Studio that replace manual Excel updates. Clients get real-time visibility into sales, inventory, branch performance, and loan portfolios — in one place, updated automatically.</p>
+          <div class="accent-bar">Anchor service — entry point for most client relationships.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">SACCOs</span><span class="tag">Manufacturing</span><span class="tag">NGOs</span><span class="tag">Multi-Branch</span></div>
+        </div>
+        <div class="tab-panel" data-panel="1">
+          <div class="panel-img"><img src="/images/service-02.png" alt="AI Automation"/></div>
+          <h3 style="color:var(--white);">AI Agents & Data Automation</h3>
+          <p>We design smart AI agents that automate routine data tasks — generating reports, analyzing feedback, sending alerts when sales shift or stock runs low, and eliminating manual data entry.</p>
+          <div class="accent-bar">Saves clients 20+ staff hours per month.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">All Sectors</span><span class="tag">Finance</span><span class="tag">Distribution</span></div>
+        </div>
+        <div class="tab-panel" data-panel="2">
+          <div class="panel-img"><img src="/images/service-03.png" alt="Predictive Modeling"/></div>
+          <h3 style="color:var(--white);">Predictive Modeling</h3>
+          <p>Forecasting models that help clients anticipate what's coming — next quarter's sales, future stock needs, loan default risk. Designed to be interpretable and actionable, not just technically sophisticated.</p>
+          <div class="accent-bar">Critical for financial institutions managing credit risk.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">SACCOs</span><span class="tag">Microfinance</span><span class="tag">Agribusiness</span></div>
+        </div>
+        <div class="tab-panel" data-panel="3">
+          <div class="panel-img"><img src="/images/service-04.png" alt="Location Insights"/></div>
+          <h3 style="color:var(--white);">Location-Based Business Insights</h3>
+          <p>For businesses with multiple branches or NGOs running regional programs, we use geospatial data mapping to compare performance across locations. See which areas are thriving and where to grow next.</p>
+          <div class="accent-bar">Strong differentiator for multi-branch retail and distribution networks.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">Multi-Branch Retail</span><span class="tag">Distribution</span><span class="tag">NGOs</span></div>
+        </div>
+        <div class="tab-panel" data-panel="4">
+          <div class="panel-img"><img src="/images/service-05.jpg" alt="Survey Analysis"/></div>
+          <h3 style="color:var(--white);">Survey & Feedback Analysis</h3>
+          <p>We analyze survey responses, customer feedback, and community interviews to surface clear themes. Using AI, we rapidly summarize open-ended responses — ideal for NGOs producing donor reports.</p>
+          <div class="accent-bar">Reduces weeks of manual analysis to hours.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">NGOs</span><span class="tag">Development</span><span class="tag">Research</span></div>
+        </div>
+        <div class="tab-panel" data-panel="5">
+          <div class="panel-img"><img src="/images/service-06.jpg" alt="Data Collection"/></div>
+          <h3 style="color:var(--white);">Data Collection & Organization</h3>
+          <p>We help organizations collect and structure their data using digital forms, simple databases, and automated pipelines. Clean, consistent, and ready for analysis.</p>
+          <div class="accent-bar">Often the prerequisite before dashboards can be built — creates immediate stickiness.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">NGOs</span><span class="tag">SMEs</span><span class="tag">Field Programs</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STORY BEAT 3 — Results (Counters)
+═══════════════════════════════════════════════════ -->
+<section id="results" class="section">
+  <div class="container">
+    <span class="label">The Impact</span>
+    <h2 style="margin-bottom:48px;">Numbers that <span class="cyan">tell the story.</span></h2>
+    <div class="counters-grid">
+      <div class="counter-box fade-up">
+        <span class="counter-val" data-target="31" data-suffix="%" style="font-size:2.8rem;font-weight:900;color:var(--cyan);display:block;line-height:1;">0%</span>
+        <span class="counter-lbl">Loan default rate reduction for a Kenyan SACCO within 6 months of predictive model deployment</span>
+      </div>
+      <div class="counter-box fade-up">
+        <span style="font-size:2.8rem;font-weight:900;color:var(--cyan);display:block;line-height:1;">7→1</span>
+        <span class="counter-lbl">Days to hours — monthly reporting time for a Nairobi manufacturer after automation</span>
+      </div>
+      <div class="counter-box fade-up">
+        <span class="counter-val" data-target="20" data-suffix="+" style="font-size:2.8rem;font-weight:900;color:var(--cyan);display:block;line-height:1;">0</span>
+        <span class="counter-lbl">Staff hours saved per month through AI-driven data automation</span>
+      </div>
+      <div class="counter-box fade-up">
+        <span class="counter-val" data-target="18" data-suffix="%" style="font-size:2.8rem;font-weight:900;color:var(--cyan);display:block;line-height:1;">0%</span>
+        <span class="counter-lbl">Of claims backlog flagged as fraudulent by AI agent for an insurance provider</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STORY BEAT 4 — Case Studies
+═══════════════════════════════════════════════════ -->
+<section id="work" class="section s-mid">
+  <div class="container">
+    <span class="label">Our Work</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;">
+      <h2>Results that <span class="cyan">speak for themselves.</span></h2>
+      <a href="/case-studies" class="btn btn-ghost" style="font-size:0.82rem;padding:9px 18px;">All Case Studies →</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+
+      <a href="/case-studies/feed-manufacturer" class="cs-card">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><span class="tag">Manufacturing</span><span style="font-size:0.75rem;color:var(--dim);">Client Engagement</span></div>
+          <h3 style="color:var(--white);font-size:1.2rem;margin-bottom:10px;line-height:1.4;">From Paper Registers to Remote-Ready Dashboards</h3>
+          <p style="font-size:0.9rem;line-height:1.7;">A Nairobi feed manufacturer eliminated a week-long reporting process with an automated Python → Power BI pipeline. The owner now runs the business fully remotely.</p>
+          <div class="cs-metrics">
+            <div><span class="cs-mv">7 days → 1 hr</span><span class="cs-ml">Reporting time</span></div>
+            <div><span class="cs-mv">2 weeks</span><span class="cs-ml">Delivery</span></div>
+            <div><span class="cs-mv">Retainer</span><span class="cs-ml">Ongoing model</span></div>
+          </div>
+          <span style="font-size:0.88rem;font-weight:600;color:var(--cyan);display:inline-block;margin-top:14px;">Read Case Study →</span>
+        </div>
+        <div class="cs-img">
+          <img src="/images/dashboards/all.jpg" alt="Manufacturing dashboard" style="object-position:top;"/>
+        </div>
+      </a>
+
+      <a href="/case-studies/sacco" class="cs-card from-right">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><span class="tag">SACCO</span><span style="font-size:0.75rem;color:var(--dim);">Illustrative Example</span></div>
+          <h3 style="color:var(--white);font-size:1.2rem;margin-bottom:10px;line-height:1.4;">From Ledger Books to Loan Intelligence</h3>
+          <p style="font-size:0.9rem;line-height:1.7;">A Kenyan SACCO automated SASRA compliance, built an early-warning default model, and reduced loan defaults by 31% in six months. Board gets live dashboards before every meeting.</p>
+          <div class="cs-metrics">
+            <div><span class="cs-mv">31%</span><span class="cs-ml">Default reduction</span></div>
+            <div><span class="cs-mv">3 wks → 1 day</span><span class="cs-ml">SASRA report</span></div>
+            <div><span class="cs-mv">Retainer</span><span class="cs-ml">Ongoing model</span></div>
+          </div>
+          <span style="font-size:0.88rem;font-weight:600;color:var(--cyan);display:inline-block;margin-top:14px;">Read Case Study →</span>
+        </div>
+        <div class="cs-img">
+          <img src="/images/dashboards/all.jpg" alt="SACCO dashboard" style="object-position:center;"/>
+        </div>
+      </a>
+
+      <a href="/case-studies/insurance" class="cs-card">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><span class="tag">Insurance</span><span style="font-size:0.75rem;color:var(--dim);">Illustrative Example</span></div>
+          <h3 style="color:var(--white);font-size:1.2rem;margin-bottom:10px;line-height:1.4;">Turning Claims Chaos into Compliance Clarity</h3>
+          <p style="font-size:0.9rem;line-height:1.7;">A Kenyan insurer automated claims reporting, flagged 18% of their backlog as fraudulent via AI, and gained real-time visibility across all branches.</p>
+          <div class="cs-metrics">
+            <div><span class="cs-mv">18%</span><span class="cs-ml">Fraud flagged</span></div>
+            <div><span class="cs-mv">5 days → 2 hrs</span><span class="cs-ml">Report time</span></div>
+            <div><span class="cs-mv">Retainer</span><span class="cs-ml">Ongoing model</span></div>
+          </div>
+          <span style="font-size:0.88rem;font-weight:600;color:var(--cyan);display:inline-block;margin-top:14px;">Read Case Study →</span>
+        </div>
+        <div class="cs-img">
+          <img src="/images/dashboards/all.jpg" alt="Insurance dashboard" style="object-position:bottom;"/>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CTA — Final story beat
+═══════════════════════════════════════════════════ -->
+<section class="section s-alt" style="text-align:center;">
+  <div class="container">
+    <span class="label" style="justify-content:center;display:flex;">Get Started</span>
+    <h2 style="max-width:580px;margin:0 auto 16px;">Ready to see what <span class="cyan">your data can do?</span></h2>
+    <p style="max-width:460px;margin:0 auto 36px;font-size:1rem;line-height:1.8;">Tell us about your organization and we'll show you exactly what an Erdem engagement looks like for your sector.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="/contact" class="btn btn-cyan">Talk to Us →</a>
+      <a href="/case-studies" class="btn btn-ghost">See Case Studies</a>
+    </div>
+  </div>
+</section>
 
 </Layout>
 
 <style>
-.hero { background: linear-gradient(135deg, var(--teal-dark) 0%, #0a4a56 100%); padding: 100px 0 80px; color: var(--white); }
-.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.hero-content h1 { color: var(--white); margin-bottom: 20px; }
-.hero-accent { color: var(--cyan); }
-.hero-sub { color: rgba(255,255,255,0.80); font-size: 1.05rem; max-width: 480px; margin-bottom: 36px; }
-.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.hero-visual { display: flex; flex-direction: column; gap: 16px; }
-.hero-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-md); padding: 20px 24px; }
-.hero-stat { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-.stat-num { font-size: 1.6rem; font-weight: 700; color: var(--white); }
-.stat-num.accent { color: var(--cyan); }
-.stat-arrow { color: var(--cyan); font-size: 1.2rem; }
-.stat-label { color: rgba(255,255,255,0.65); font-size: 0.88rem; }
-.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-.problem-item { text-align: center; padding: 32px 24px; }
-.problem-icon { font-size: 2.2rem; margin-bottom: 16px; }
-.problem-item h3 { margin-bottom: 10px; color: var(--teal-dark); }
-.positioning-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.positioning-stats { display: flex; flex-direction: column; gap: 32px; }
-.pos-stat { border-left: 3px solid var(--cyan); padding-left: 20px; }
-.pos-num { display: block; font-size: 2rem; font-weight: 700; color: var(--cyan); }
-.pos-label { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
-.service-card { display: block; text-decoration: none; color: inherit; }
-.service-num { font-size: 0.75rem; font-weight: 700; color: var(--teal-bright); letter-spacing: 0.1em; margin-bottom: 12px; }
-.service-card h3 { color: var(--teal-dark); margin-bottom: 10px; }
-.service-tag { display: inline-block; margin-top: 16px; font-size: 0.75rem; font-weight: 600; color: var(--teal-mid); background: #E0F5F5; padding: 3px 10px; border-radius: 99px; }
-.cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.case-card { display: block; color: inherit; }
-.case-card h3 { color: var(--teal-dark); margin-bottom: 10px; }
-.case-metric { margin-top: 20px; padding-top: 16px; border-top: 1px solid #E5E7EB; }
-.metric-val { display: block; font-size: 1.4rem; font-weight: 700; color: var(--teal-mid); }
-.metric-label { font-size: 0.82rem; color: var(--gray-mid); }
-.cta-section { background: var(--teal-dark); }
-@media (max-width: 768px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .positioning-inner { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+@media(max-width:960px){
+  #hero .container > div:first-child{grid-template-columns:1fr!important}
+  #hero .container > div:first-child > div:last-child{display:none}
+  [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:768px){
+  [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important}
 }
 </style>
+
+<script>
+// ── Hero entrance animations
+window.addEventListener('load', () => {
+  const ids = ['hero-pill','hero-h1','hero-p','hero-btns','s1','s2','s3','hero-chart'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.style.opacity = '1'; el.style.transform = 'none'; }
+  });
+});
+
+// ── Particle canvas
+const pc = document.getElementById('heroCanvas') as HTMLCanvasElement;
+const pCtx = pc.getContext('2d')!;
+let pts: {x:number;y:number;vx:number;vy:number}[] = [];
+let W=0,H=0;
+function pResize(){W=pc.offsetWidth;H=pc.offsetHeight;pc.width=W;pc.height=H;}
+function pInit(){pts=[];for(let i=0;i<45;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35});}
+function pDraw(){
+  pCtx.fillStyle='#071518';pCtx.fillRect(0,0,W,H);
+  pts.forEach((p,i)=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    pCtx.beginPath();pCtx.arc(p.x,p.y,1.3,0,Math.PI*2);
+    pCtx.fillStyle='rgba(0,212,224,0.4)';pCtx.fill();
+    for(let j=i+1;j<pts.length;j++){
+      const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<90){pCtx.beginPath();pCtx.moveTo(p.x,p.y);pCtx.lineTo(q.x,q.y);
+        pCtx.strokeStyle=`rgba(0,212,224,${0.1*(1-d/90)})`;pCtx.lineWidth=0.5;pCtx.stroke();}
+    }
+  });
+  requestAnimationFrame(pDraw);
+}
+pResize();pInit();pDraw();
+window.addEventListener('resize',()=>{pResize();pInit();});
+
+// ── Hero line chart — draws itself stroke by stroke
+const lc = document.getElementById('lineChart') as HTMLCanvasElement;
+const lCtx = lc.getContext('2d')!;
+
+// Default rate: high before May, drops after Erdem deployed
+const defaultRate = [12.4, 11.8, 12.1, 11.5, 10.9, 9.2, 7.8, 6.1, 5.2, 4.8, 4.5, 4.2];
+const industryAvg = [10.2, 10.3, 10.1, 10.4, 10.3, 10.5, 10.4, 10.6, 10.3, 10.5, 10.4, 10.6];
+const target      = [9.0,  9.0,  9.0,  9.0,  9.0,  9.0,  9.0,  9.0,  9.0,  9.0,  9.0,  9.0];
+
+function resizeLC(){
+  const w=lc.offsetWidth;lc.width=w;lc.height=130;
+}
+resizeLC();
+
+const minV=3,maxV=14,padL=8,padR=8,padT=10,padB=8;
+function toX(i:number){return padL+(lc.width-padL-padR)*(i/(defaultRate.length-1));}
+function toY(v:number){return padT+(lc.height-padT-padB)*(1-(v-minV)/(maxV-minV));}
+
+let progress = 0;
+const totalDur = 2200;
+const startTime = performance.now();
+
+function drawLineChart(now:number){
+  const p = Math.min((now - startTime)/totalDur, 1);
+  const ease = 1-Math.pow(1-p,2);
+  progress = ease;
+  lCtx.clearRect(0,0,lc.width,lc.height);
+
+  // Grid lines
+  for(let v=4;v<=14;v+=2){
+    const y=toY(v);
+    lCtx.beginPath();lCtx.moveTo(padL,y);lCtx.lineTo(lc.width-padR,y);
+    lCtx.strokeStyle='rgba(255,255,255,0.05)';lCtx.lineWidth=1;lCtx.stroke();
+    lCtx.fillStyle='rgba(255,255,255,0.25)';lCtx.font='10px Inter';
+    lCtx.fillText(v+'%',2,y+4);
+  }
+
+  // Deployment line at May (index 4)
+  const deployX=toX(4);
+  lCtx.beginPath();lCtx.moveTo(deployX,padT);lCtx.lineTo(deployX,lc.height-padB);
+  lCtx.strokeStyle='rgba(0,212,224,0.25)';lCtx.lineWidth=1;lCtx.setLineDash([4,4]);lCtx.stroke();
+  lCtx.setLineDash([]);
+  lCtx.fillStyle='rgba(0,212,224,0.6)';lCtx.font='9px Inter';
+  lCtx.fillText('Erdem →',deployX+4,padT+12);
+
+  // Draw each line progressively
+  function drawLine(data:number[],color:string,dashed=false){
+    const pts=Math.floor(data.length*progress*1.2);
+    const maxPts=Math.min(pts,data.length-1);
+    if(maxPts<1)return;
+    if(dashed)lCtx.setLineDash([5,5]);
+    lCtx.beginPath();lCtx.moveTo(toX(0),toY(data[0]));
+    for(let i=1;i<=maxPts;i++) lCtx.lineTo(toX(i),toY(data[i]));
+    lCtx.strokeStyle=color;lCtx.lineWidth=2.5;lCtx.lineJoin='round';lCtx.stroke();
+    lCtx.setLineDash([]);
+    // Dot at end
+    if(maxPts>0){
+      lCtx.beginPath();lCtx.arc(toX(maxPts),toY(data[maxPts]),4,0,Math.PI*2);
+      lCtx.fillStyle=color;lCtx.fill();
+    }
+  }
+  drawLine(target,'rgba(255,255,255,0.2)',true);
+  drawLine(industryAvg,'#14B8A6');
+  drawLine(defaultRate,'#00D4E0');
+
+  if(p<1) requestAnimationFrame(drawLineChart);
+}
+// Start drawing after hero entrance
+setTimeout(()=>requestAnimationFrame(drawLineChart), 1200);
+
+// ── Services tabs
+const tabBtns  = document.querySelectorAll('.tab-btn');
+const tabPanels= document.querySelectorAll('.tab-panel');
+tabBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const idx=btn.getAttribute('data-tab');
+    tabBtns.forEach(b=>b.classList.remove('active'));
+    tabPanels.forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelector(`.tab-panel[data-panel="${idx}"]`)?.classList.add('active');
+  });
+});
+</script>

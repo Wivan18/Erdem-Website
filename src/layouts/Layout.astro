@@ -1,97 +1,140 @@
 ---
 import '../styles/global.css';
-
-interface Props {
-  title: string;
-  description?: string;
-}
-
-const { title, description = 'IONIC — Data Analytics & Business Intelligence. We transform raw data into actionable intelligence for organizations across East Africa.' } = Astro.props;
+interface Props { title: string; description?: string; }
+const { title, description = 'Erdem Analytics — Data Analytics & Business Intelligence for East Africa. We transform raw data into clear dashboards, automated reports, and predictive models.' } = Astro.props;
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={description} />
-  <title>{title} | IONIC — Data Analytics & Business Intelligence</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content={description}/>
+  <title>{title} | Erdem Analytics</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/images/ionic-lockup-horizontal.png" alt="IONIC" />
-      </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/services">Services</a></li>
-        <li><a href="/who-we-serve">Who We Serve</a></li>
-        <li><a href="/case-studies">Case Studies</a></li>
-        <li><a href="/blog">Insights</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-      <a href="/contact" class="btn btn-primary nav-cta">Talk to Us</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo.png" alt="Erdem Analytics"/>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/#services" data-section="services">Services</a></li>
+      <li><a href="/#results"  data-section="results">Results</a></li>
+      <li><a href="/case-studies">Case Studies</a></li>
+      <li><a href="/blog">Insights</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <div class="nav-cta-wrap">
+      <a href="/contact" class="btn btn-cyan">Talk to Us</a>
     </div>
-  </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <!-- PAGE CONTENT -->
-  <main>
-    <slot />
-  </main>
+<main><slot/></main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <img src="/images/ionic-mark-reversed.png" alt="IONIC" style="height:40px; margin-bottom:16px;" />
-          <p style="font-size:0.9rem; max-width:300px; line-height:1.8;">
-            Data Analytics & Business Intelligence for organizations across East Africa.
-            We turn raw data into decisions — on retainer, not on request.
-          </p>
-        </div>
-        <div>
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li><a href="/services#dashboards">Business Dashboards</a></li>
-            <li><a href="/services#automation">AI & Automation</a></li>
-            <li><a href="/services#predictive">Predictive Modeling</a></li>
-            <li><a href="/services#location">Location Insights</a></li>
-            <li><a href="/services#survey">Survey Analysis</a></li>
-            <li><a href="/services#data">Data Collection</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul class="footer-links">
-            <li><a href="/who-we-serve">Who We Serve</a></li>
-            <li><a href="/case-studies">Case Studies</a></li>
-            <li><a href="/blog">Insights</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="/images/logo-mark.png" alt="Erdem" style="height:34px;margin-bottom:18px;"/>
+        <p style="max-width:260px;font-size:0.87rem;">Data Analytics & Business Intelligence for organizations across East Africa. On retainer, not on request.</p>
       </div>
-      <div class="footer-bottom">
-        <span>© {new Date().getFullYear()} IONIC Data Analytics & Business Intelligence. Nairobi, Kenya.</span>
-        <span style="color:var(--cyan);">ionic.co.ke</span>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="/#services">Business Dashboards</a></li>
+          <li><a href="/#services">AI & Automation</a></li>
+          <li><a href="/#services">Predictive Modeling</a></li>
+          <li><a href="/#services">Location Insights</a></li>
+          <li><a href="/#services">Survey Analysis</a></li>
+          <li><a href="/#services">Data Collection</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="/case-studies">Case Studies</a></li>
+          <li><a href="/blog">Insights</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} Erdem Labs Limited. Nairobi, Kenya.</span>
+      <span style="color:var(--cyan);font-weight:600;">erdem.co.ke</span>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    // Mobile nav toggle
-    const toggle = document.getElementById('nav-toggle');
-    const links  = document.getElementById('nav-links');
-    toggle?.addEventListener('click', () => links?.classList.toggle('open'));
-  </script>
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav')!;
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[data-section]');
 
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+  // Active section highlight
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= (s as HTMLElement).offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-section') === current);
+  });
+});
+
+// Mobile nav
+const toggle = document.getElementById('nav-toggle')!;
+const links  = document.getElementById('nav-links')!;
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+// Scroll animations — fade-up
+const fadeObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
+
+// Case study slide-in
+const csObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); csObs.unobserve(e.target); }});
+}, { threshold: 0.15 });
+document.querySelectorAll('.cs-card').forEach(el => csObs.observe(el));
+
+// Counter animation
+function animateCounter(el: HTMLElement) {
+  const target  = parseFloat(el.dataset.target || '0');
+  const suffix  = el.dataset.suffix || '';
+  const prefix  = el.dataset.prefix || '';
+  const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
+  const dur = 2000;
+  const start = performance.now();
+  function step(now: number) {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = target * ease;
+    el.textContent = prefix + val.toFixed(decimals) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = prefix + target.toFixed(decimals) + suffix;
+  }
+  requestAnimationFrame(step);
+}
+const cntObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target as HTMLElement);
+      cntObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter-val').forEach(el => cntObs.observe(el));
+</script>
 </body>
 </html>

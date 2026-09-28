@@ -1,101 +1,47 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Case Studies" description="See how IONIC has helped manufacturers, SACCOs, and insurers transform their data into decisions.">
-
-  <section class="page-hero section-dark">
-    <div class="container">
-      <p class="section-label" style="color:var(--cyan);">Our Work</p>
-      <h1 style="color:var(--white); max-width:600px;">From raw data to real decisions.</h1>
-      <p style="color:rgba(255,255,255,0.75); max-width:520px; margin-top:16px; font-size:1.05rem;">
-        Three engagements across manufacturing, insurance, and financial services — showing what IONIC builds and the results it delivers.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="cs-list">
-
-        <a href="/case-studies/feed-manufacturer" class="cs-card">
-          <div class="cs-card-inner">
-            <div class="cs-meta">
-              <span class="tag tag-teal">Manufacturing</span>
-              <span class="cs-type">Client Engagement</span>
-            </div>
-            <h2>From Paper Registers to Remote-Ready Dashboards</h2>
-            <p>A Nairobi-based animal feed manufacturer was spending a full week every month manually compiling reports from paper records and disconnected Excel files. The owner had no real-time visibility into raw material costs or product profitability — and could not run the business remotely.</p>
-            <p>IONIC built an automated Python-to-Power BI pipeline and delivered 5 dashboards in 2 weeks. Reporting now takes under an hour. The business is managed remotely.</p>
-            <div class="cs-metrics">
-              <div class="cs-metric"><span class="metric-val">7 days → 1 hr</span><span class="metric-label">Monthly reporting time</span></div>
-              <div class="cs-metric"><span class="metric-val">2 weeks</span><span class="metric-label">Delivery time</span></div>
-              <div class="cs-metric"><span class="metric-val">Retainer</span><span class="metric-label">Engagement model</span></div>
-            </div>
-            <span class="cs-cta">Read Case Study →</span>
-          </div>
-        </a>
-
-        <a href="/case-studies/insurance" class="cs-card">
-          <div class="cs-card-inner">
-            <div class="cs-meta">
-              <span class="tag tag-teal">Insurance</span>
-              <span class="cs-type">Illustrative Example</span>
-            </div>
-            <h2>Turning Claims Chaos into Compliance Clarity</h2>
-            <p>A mid-sized Kenyan insurer was spending five working days each month manually compiling claims reports from branch Excel files and email attachments. There was no mechanism to detect fraud patterns, and branch performance was invisible between quarterly reviews.</p>
-            <p>IONIC built an automated claims pipeline, two Power BI dashboards, an AI fraud detection agent, and auto-generated SASRA compliance reports.</p>
-            <div class="cs-metrics">
-              <div class="cs-metric"><span class="metric-val">5 days → 2 hrs</span><span class="metric-label">Claims report time</span></div>
-              <div class="cs-metric"><span class="metric-val">~18%</span><span class="metric-label">Fraudulent claims flagged</span></div>
-              <div class="cs-metric"><span class="metric-val">Retainer</span><span class="metric-label">Engagement model</span></div>
-            </div>
-            <span class="cs-cta">Read Case Study →</span>
-          </div>
-        </a>
-
-        <a href="/case-studies/sacco" class="cs-card">
-          <div class="cs-card-inner">
-            <div class="cs-meta">
-              <span class="tag tag-teal">SACCO</span>
-              <span class="cs-type">Illustrative Example</span>
-            </div>
-            <h2>From Ledger Books to Loan Intelligence</h2>
-            <p>A deposit-taking SACCO was spending three weeks per quarter preparing SASRA regulatory submissions manually. There was no early warning system for loan defaults, and the board was receiving paper reports with figures weeks out of date.</p>
-            <p>IONIC built a unified loan portfolio dashboard, a predictive default model, automated repayment alerts, and SASRA-ready compliance reports.</p>
-            <div class="cs-metrics">
-              <div class="cs-metric"><span class="metric-val">3 wks → 1 day</span><span class="metric-label">Regulatory report time</span></div>
-              <div class="cs-metric"><span class="metric-val">31%</span><span class="metric-label">Default rate reduction</span></div>
-              <div class="cs-metric"><span class="metric-val">Retainer</span><span class="metric-label">Engagement model</span></div>
-            </div>
-            <span class="cs-cta">Read Case Study →</span>
-          </div>
-        </a>
-
+<Layout title="Case Studies" description="See how Erdem has helped manufacturers, SACCOs, and insurers transform their data into decisions.">
+  <section class="page-hero"><div class="container">
+    <span class="label">Our Work</span>
+    <h1>From raw data to <span class="cyan">real decisions.</span></h1>
+    <p style="margin-top:16px;max-width:520px;">Three engagements across manufacturing, financial services, and insurance — showing what Erdem builds and the results it delivers.</p>
+  </div></section>
+  <section class="section"><div class="container" style="display:flex;flex-direction:column;gap:24px;">
+    <a href="/case-studies/feed-manufacturer" class="cs-card">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><span class="tag">Manufacturing</span><span style="font-size:0.75rem;color:var(--dim);">Client Engagement</span></div>
+        <h2 style="font-size:1.3rem;color:var(--white);margin-bottom:10px;line-height:1.3;">From Paper Registers to Remote-Ready Dashboards</h2>
+        <p style="font-size:0.9rem;line-height:1.7;">A Nairobi-based animal feed manufacturer eliminated a week-long reporting process with an automated Python-to-Power BI pipeline. The business is now managed fully remotely.</p>
+        <div class="cs-metrics"><div><span class="cs-mv">7 days → 1 hr</span><span class="cs-ml">Reporting time</span></div><div><span class="cs-mv">2 weeks</span><span class="cs-ml">Delivery</span></div><div><span class="cs-mv">Retainer</span><span class="cs-ml">Model</span></div></div>
+        <span style="font-size:0.88rem;font-weight:600;color:var(--cyan);display:inline-block;margin-top:12px;">Read Case Study →</span>
       </div>
-    </div>
-  </section>
-
-  <section class="section section-dark" style="text-align:center;">
-    <div class="container">
-      <h2 style="color:var(--white); max-width:500px; margin:0 auto 16px;">Your organization could be next.</h2>
-      <p style="color:rgba(255,255,255,0.75); max-width:420px; margin:0 auto 36px;">Tell us what you are working with and we will show you what IONIC would build for you.</p>
-      <a href="/contact" class="btn btn-white">Start a Conversation</a>
-    </div>
-  </section>
-
+      <div class="cs-img"><img src="/images/dashboards/all.jpg" alt="Manufacturing dashboard" style="object-position:top;"/></div>
+    </a>
+    <a href="/case-studies/sacco" class="cs-card from-right">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><span class="tag">SACCO</span><span style="font-size:0.75rem;color:var(--dim);">Illustrative Example</span></div>
+        <h2 style="font-size:1.3rem;color:var(--white);margin-bottom:10px;line-height:1.3;">From Ledger Books to Loan Intelligence</h2>
+        <p style="font-size:0.9rem;line-height:1.7;">A Kenyan SACCO automated SASRA compliance reporting, built an early-warning default model, and reduced loan defaults by 31% in six months.</p>
+        <div class="cs-metrics"><div><span class="cs-mv">31%</span><span class="cs-ml">Default reduction</span></div><div><span class="cs-mv">3 wks → 1 day</span><span class="cs-ml">SASRA report</span></div><div><span class="cs-mv">Retainer</span><span class="cs-ml">Model</span></div></div>
+        <span style="font-size:0.88rem;font-weight:600;color:var(--cyan);display:inline-block;margin-top:12px;">Read Case Study →</span>
+      </div>
+      <div class="cs-img"><img src="/images/dashboards/all.jpg" alt="SACCO dashboard" style="object-position:center;"/></div>
+    </a>
+    <a href="/case-studies/insurance" class="cs-card">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><span class="tag">Insurance</span><span style="font-size:0.75rem;color:var(--dim);">Illustrative Example</span></div>
+        <h2 style="font-size:1.3rem;color:var(--white);margin-bottom:10px;line-height:1.3;">Turning Claims Chaos into Compliance Clarity</h2>
+        <p style="font-size:0.9rem;line-height:1.7;">A Kenyan insurer automated claims reporting, flagged 18% of their backlog as fraudulent via AI, and gained real-time visibility across all branches.</p>
+        <div class="cs-metrics"><div><span class="cs-mv">18%</span><span class="cs-ml">Fraud flagged</span></div><div><span class="cs-mv">5 days → 2 hrs</span><span class="cs-ml">Report time</span></div><div><span class="cs-mv">Retainer</span><span class="cs-ml">Model</span></div></div>
+        <span style="font-size:0.88rem;font-weight:600;color:var(--cyan);display:inline-block;margin-top:12px;">Read Case Study →</span>
+      </div>
+      <div class="cs-img"><img src="/images/dashboards/all.jpg" alt="Insurance dashboard" style="object-position:bottom;"/></div>
+    </a>
+  </div></section>
+  <section class="section s-mid" style="text-align:center;"><div class="container">
+    <h2 style="margin-bottom:14px;">Your organization could be next.</h2>
+    <p style="color:var(--muted);max-width:420px;margin:0 auto 32px;">Tell us what you're working with and we'll show you what Erdem would build for you.</p>
+    <a href="/contact" class="btn btn-cyan">Start a Conversation →</a>
+  </div></section>
 </Layout>
-<style>
-.page-hero { padding: 80px 0 72px; }
-.cs-list { display: flex; flex-direction: column; gap: 32px; }
-.cs-card { display: block; color: inherit; border: 1px solid #E5E7EB; border-radius: var(--radius-lg); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
-.cs-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-.cs-card-inner { padding: 40px; }
-.cs-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.cs-type { font-size: 0.78rem; color: var(--gray-mid); font-weight: 500; }
-.cs-card h2 { color: var(--teal-dark); margin-bottom: 12px; }
-.cs-card p { margin-bottom: 12px; }
-.cs-metrics { display: flex; gap: 32px; margin: 24px 0; padding: 20px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; flex-wrap: wrap; }
-.metric-val { display: block; font-size: 1.25rem; font-weight: 700; color: var(--teal-mid); }
-.metric-label { font-size: 0.8rem; color: var(--gray-mid); }
-.cs-cta { font-size: 0.9rem; font-weight: 600; color: var(--teal-mid); }
-</style>

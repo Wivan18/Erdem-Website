@@ -1,149 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const svcs=[
+  {num:'01',id:'dashboards',img:'/images/service-01.jpg',title:'Business Dashboards & Analysis',tagline:'Turn your spreadsheets into simple, visual reports.',desc:'We build clear, interactive dashboards in Power BI and Looker Studio that replace manual Excel updates. Real-time visibility into sales, inventory, branch performance, and loan portfolios — all in one place, updated automatically.',why:'Anchor service — entry point for most client relationships.',tags:['SACCOs','Manufacturing','Multi-Branch Retail','NGOs']},
+  {num:'02',id:'automation',img:'/images/service-02.png',title:'AI Agents & Data Automation',tagline:'Let AI handle the repetitive work.',desc:'Smart AI agents that automate routine data tasks — generating reports, analyzing customer feedback, sending alerts when sales shift or stock runs low, and eliminating manual data entry.',why:'Saves clients 20+ staff hours per month.',tags:['All Sectors','Finance','Distribution']},
+  {num:'03',id:'predictive',img:'/images/service-03.png',title:'Predictive Modeling',tagline:'Plan ahead with confidence.',desc:"Forecasting models for next quarter's sales, future stock needs, and loan default risk. Designed to be interpretable and actionable, not just technically sophisticated.",why:'Critical for financial institutions managing credit risk and SMEs managing inventory.',tags:['SACCOs','Microfinance','Agribusiness']},
+  {num:'04',id:'location',img:'/images/service-04.png',title:'Location-Based Business Insights',tagline:'Know where your business performs best.',desc:'Geospatial data mapping to compare performance across branches or regions. See which areas are thriving, where opportunities are being lost, and where to grow next.',why:'Strong differentiator for multi-branch retail, distribution networks, and regional NGO programs.',tags:['Multi-Branch Retail','Distribution','NGOs']},
+  {num:'05',id:'survey',img:'/images/service-05.jpg',title:'Survey & Feedback Analysis',tagline:'Turn opinions into insights you can act on.',desc:'We analyze survey responses, customer feedback, and community interviews using AI to surface clear themes. Ideal for NGOs producing donor reports or businesses improving their products.',why:'Reduces weeks of manual analysis to hours.',tags:['NGOs','Development Organizations','Research']},
+  {num:'06',id:'data',img:'/images/service-06.jpg',title:'Data Collection & Organization',tagline:'Set the foundation for good decisions.',desc:'Digital forms, simple databases, and automated collection pipelines that ensure your data is clean, consistent, and ready for analysis.',why:'Often the prerequisite before dashboards can be built — creates immediate stickiness.',tags:['NGOs','SMEs','Field Programs']},
+];
 ---
-<Layout title="Services" description="IONIC offers six integrated data analytics and BI service lines — dashboards, AI automation, predictive modeling, location insights, survey analysis, and data collection.">
-
-  <section class="page-hero section-dark">
+<Layout title="Services" description="Erdem offers six integrated data analytics and BI service lines for East African businesses, SACCOs, and NGOs.">
+  <section class="page-hero">
     <div class="container">
-      <p class="section-label" style="color:var(--cyan);">What We Do</p>
-      <h1 style="color:var(--white); max-width:640px;">Six service lines. One platform partner.</h1>
-      <p style="color:rgba(255,255,255,0.75); max-width:540px; margin-top:16px; font-size:1.05rem;">
-        Each service is designed to stand alone or layer with others as your needs mature. Most client relationships start with dashboards and grow from there.
-      </p>
+      <span class="label">What We Do</span>
+      <h1>Six service lines.<br/><span class="cyan">One platform partner.</span></h1>
+      <p style="margin-top:16px;max-width:520px;">Each service stands alone or layers with others as your needs mature. Most relationships start with dashboards and grow from there.</p>
     </div>
   </section>
-
   <section class="section">
-    <div class="container">
-
-      <div class="service-block" id="dashboards">
-        <div class="service-label">01</div>
-        <div class="service-body">
-          <h2>Business Dashboards & Analysis</h2>
-          <p class="service-tagline">Turn your spreadsheets into simple, visual reports.</p>
-          <p>We build clear, interactive dashboards in Power BI and Looker Studio that replace manual Excel updates. Clients get real-time visibility into sales, inventory, branch performance, loan portfolios, and project outcomes — all in one place, updated automatically.</p>
-          <div class="service-why">
-            <strong>Why it matters:</strong> This is our anchor service and the entry point for most client relationships. If you are still consolidating spreadsheets manually, this is where to start.
+    <div class="container" style="display:flex;flex-direction:column;gap:48px;">
+      {svcs.map((s,i)=>(
+        <div class="fade-up" id={s.id} style={`display:grid;grid-template-columns:${i%2===0?'340px 1fr':'1fr 340px'};gap:48px;align-items:center;padding-bottom:48px;border-bottom:1px solid var(--border);`}>
+          <div style={i%2===0?'':'order:2'}>
+            <img src={s.img} alt={s.title} style="width:100%;height:240px;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--b-cyan);display:block;"/>
           </div>
-          <div class="service-suits">
-            <span class="tag tag-teal">SACCOs</span>
-            <span class="tag tag-teal">Manufacturing</span>
-            <span class="tag tag-teal">Multi-Branch Retail</span>
-            <span class="tag tag-teal">NGOs</span>
+          <div style={i%2===0?'':'order:1'}>
+            <span class="label">{s.num}</span>
+            <h2 style="font-size:1.6rem;margin-bottom:8px;">{s.title}</h2>
+            <p style="color:var(--cyan);font-style:italic;margin-bottom:14px;font-size:0.95rem;">{s.tagline}</p>
+            <p style="margin-bottom:16px;">{s.desc}</p>
+            <div class="accent-bar" style="margin-bottom:16px;">{s.why}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">{s.tags.map(t=><span class="tag">{t}</span>)}</div>
           </div>
         </div>
-      </div>
-
-      <div class="service-block alt" id="automation">
-        <div class="service-label">02</div>
-        <div class="service-body">
-          <h2>AI Agents & Data Automation</h2>
-          <p class="service-tagline">Let AI handle the repetitive work.</p>
-          <p>We design smart AI agents that automate routine data tasks: generating reports and summaries, analyzing customer or survey feedback, sending alerts when sales shift or stock runs low, and eliminating manual data entry. The result is faster insights, less effort, and more time for strategy.</p>
-          <div class="service-why">
-            <strong>Why it matters:</strong> Positioned around a clear value metric — saves clients 20+ staff hours per month. If your team is doing the same data tasks repeatedly, this service eliminates them.
-          </div>
-          <div class="service-suits">
-            <span class="tag tag-teal">All Sectors</span>
-            <span class="tag tag-teal">Finance</span>
-            <span class="tag tag-teal">Distribution</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-block" id="predictive">
-        <div class="service-label">03</div>
-        <div class="service-body">
-          <h2>Predictive Modeling</h2>
-          <p class="service-tagline">Plan ahead with confidence.</p>
-          <p>We build forecasting models that help clients anticipate what is coming — next quarter's sales, future stock needs, loan default risk, or project impact. These models are designed to be interpretable and actionable, not just technically sophisticated.</p>
-          <div class="service-why">
-            <strong>Why it matters:</strong> Particularly valuable for financial institutions managing credit risk and SMEs managing inventory cycles. Stop reacting — start anticipating.
-          </div>
-          <div class="service-suits">
-            <span class="tag tag-teal">SACCOs</span>
-            <span class="tag tag-teal">Microfinance</span>
-            <span class="tag tag-teal">Agribusiness</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-block alt" id="location">
-        <div class="service-label">04</div>
-        <div class="service-body">
-          <h2>Location-Based Business Insights</h2>
-          <p class="service-tagline">Know where your business performs best.</p>
-          <p>For businesses with multiple branches or NGOs running regional programs, we use geospatial data mapping to compare performance across locations. Clients can see which areas are thriving, where opportunities are being lost, and where to grow next.</p>
-          <div class="service-why">
-            <strong>Why it matters:</strong> A strong differentiator for multi-branch retail, distribution networks, and regional NGO programs. If you operate in more than one location, you need this visibility.
-          </div>
-          <div class="service-suits">
-            <span class="tag tag-teal">Multi-Branch Retail</span>
-            <span class="tag tag-teal">Distribution</span>
-            <span class="tag tag-teal">NGOs</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-block" id="survey">
-        <div class="service-label">05</div>
-        <div class="service-body">
-          <h2>Survey & Feedback Analysis</h2>
-          <p class="service-tagline">Turn opinions into insights you can act on.</p>
-          <p>We analyze survey responses, customer feedback, and community interviews to surface clear themes and recommendations. Using AI, we rapidly summarize open-ended responses and highlight what matters most — ideal for NGOs producing donor reports or businesses improving their products.</p>
-          <div class="service-why">
-            <strong>Why it matters:</strong> Reduces weeks of manual analysis to hours. If you are sitting on unanalyzed survey data, IONIC can turn it around fast.
-          </div>
-          <div class="service-suits">
-            <span class="tag tag-teal">NGOs</span>
-            <span class="tag tag-teal">Development Organizations</span>
-            <span class="tag tag-teal">Retail</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-block alt" id="data">
-        <div class="service-label">06</div>
-        <div class="service-body">
-          <h2>Data Collection & Organization</h2>
-          <p class="service-tagline">Set the foundation for good decisions.</p>
-          <p>We help organizations collect and structure their data using digital forms, simple databases, and automated collection pipelines. Whether it is sales records, customer details, or field data from NGO programs, we ensure data is clean, consistent, and ready for analysis.</p>
-          <div class="service-why">
-            <strong>Why it matters:</strong> Often the prerequisite engagement before dashboards can be built — and it creates immediate stickiness. Good data infrastructure pays for itself within months.
-          </div>
-          <div class="service-suits">
-            <span class="tag tag-teal">NGOs</span>
-            <span class="tag tag-teal">SMEs</span>
-            <span class="tag tag-teal">Field Programs</span>
-          </div>
-        </div>
-      </div>
-
+      ))}
     </div>
   </section>
-
-  <section class="section section-dark" style="text-align:center;">
+  <section class="section s-mid" style="text-align:center;">
     <div class="container">
-      <p class="section-label" style="color:var(--cyan);">Start a Conversation</p>
-      <h2 style="color:var(--white); max-width:520px; margin:0 auto 16px;">Not sure which service fits your situation?</h2>
-      <p style="color:rgba(255,255,255,0.75); max-width:440px; margin:0 auto 36px;">Tell us about your organization and we will recommend where to start.</p>
-      <a href="/contact" class="btn btn-white">Talk to Us</a>
+      <h2 style="margin-bottom:14px;">Not sure which service fits?</h2>
+      <p style="color:var(--muted);max-width:440px;margin:0 auto 32px;">Tell us about your organization and we'll recommend exactly where to start.</p>
+      <a href="/contact" class="btn btn-cyan">Talk to Us →</a>
     </div>
   </section>
-
 </Layout>
-
 <style>
-.page-hero { padding: 80px 0 72px; }
-.service-block { display: grid; grid-template-columns: 80px 1fr; gap: 40px; padding: 64px 0; border-bottom: 1px solid #E5E7EB; align-items: start; }
-.service-block.alt { background: var(--off-white); margin: 0 -24px; padding: 64px 24px; }
-.service-label { font-size: 2.5rem; font-weight: 800; color: #E5E7EB; line-height: 1; padding-top: 4px; }
-.service-body h2 { color: var(--teal-dark); margin-bottom: 8px; }
-.service-tagline { font-size: 1.05rem; color: var(--teal-mid); font-style: italic; margin-bottom: 16px; }
-.service-why { background: var(--gray-light); border-left: 3px solid var(--teal-bright); padding: 14px 18px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 20px 0; font-size: 0.92rem; }
-.service-suits { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-@media (max-width: 768px) {
-  .service-block { grid-template-columns: 1fr; gap: 16px; }
-  .service-label { font-size: 1.5rem; }
-}
+@media(max-width:900px){[style*="grid-template-columns:340px 1fr"],[style*="grid-template-columns:1fr 340px"]{grid-template-columns:1fr!important}[style*="order:2"],[style*="order:1"]{order:unset!important}}
 </style>

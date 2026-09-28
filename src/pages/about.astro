@@ -1,89 +1,66 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="About" description="IONIC is a Nairobi-based data analytics and business intelligence company founded to serve East African organizations that are data-rich but insight-poor.">
-
-  <section class="page-hero section-dark">
+<Layout title="About" description="Erdem Analytics — Built in Nairobi for East Africa.">
+  <section class="page-hero">
     <div class="container">
-      <p class="section-label" style="color:var(--cyan);">About IONIC</p>
-      <h1 style="color:var(--white); max-width:640px;">Built in Nairobi. Built for East Africa.</h1>
+      <span class="label">About Erdem</span>
+      <h1>Built in Nairobi.<br/><span class="cyan">Built for East Africa.</span></h1>
     </div>
   </section>
-
   <section class="section">
-    <div class="container about-grid">
-      <div class="about-text">
-        <p class="section-label">The Company</p>
-        <h2 style="margin-bottom:16px;">Data analytics and intelligence — on a retainer, not on request.</h2>
-        <div class="divider"></div>
-        <p>IONIC is a data analytics and business intelligence company based in Kenya, built to serve organizations across East Africa that are data-rich but insight-poor.</p>
-        <p>The core premise is straightforward: most SMEs, financial institutions, and NGOs generate significant operational data every day — from loan repayments and sales figures to inventory movements and project outcomes — but lack the tools, skills, or bandwidth to turn that data into decisions.</p>
-        <p>IONIC bridges that gap. We take raw, often scattered data and transform it into clear, actionable intelligence — delivered through dashboards, automated reports, predictive models, and AI-driven workflows that clients can actually use.</p>
-        <p>We operate as a <strong>platform provider, not a one-off consultancy</strong>. We don't build dashboards on request and disappear. We embed ourselves in a client's operations on a retainer basis, becoming a recurring fixture in how they monitor performance, catch problems early, and plan ahead.</p>
+    <div class="container" style="display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start;">
+      <div>
+        <span class="label">The Company</span>
+        <h2 style="margin-bottom:16px;">Data analytics and intelligence —<br/><span class="cyan">on a retainer, not on request.</span></h2>
+        <div style="width:40px;height:2px;background:var(--cyan);border-radius:1px;margin:16px 0 24px;"></div>
+        <p style="margin-bottom:16px;">Erdem is a data analytics and business intelligence company based in Kenya, built to serve organizations across East Africa that are data-rich but insight-poor.</p>
+        <p style="margin-bottom:16px;">Most SMEs, financial institutions, and NGOs generate significant operational data every day — from loan repayments and sales figures to inventory movements and project outcomes — but lack the tools, skills, or bandwidth to turn that data into decisions.</p>
+        <p style="margin-bottom:16px;">Erdem bridges that gap. We take raw, often scattered data and transform it into clear, actionable intelligence — delivered through dashboards, automated reports, predictive models, and AI-driven workflows that clients can actually use.</p>
+        <p>We operate as a <strong style="color:var(--white);">platform provider, not a one-off consultancy</strong>. We embed in your operations on a retainer basis, becoming a recurring fixture in how you monitor performance, catch problems early, and plan ahead.</p>
       </div>
-      <div class="about-sidebar">
-        <div class="founder-card">
-          <div class="founder-avatar">
-            <div class="avatar-placeholder">IV</div>
-          </div>
-          <h3>Ivan</h3>
-          <p class="founder-title">Founder & Lead Analyst</p>
-          <p class="founder-bio">Ivan is a data analytics professional based in Nairobi with deep expertise in Power BI, Python, and business intelligence architecture. He founded IONIC to bring enterprise-grade data infrastructure to East African organizations that have historically had to manage without it.</p>
-          <p class="founder-bio">His background spans financial services, manufacturing, and NGO data engagements — giving IONIC practical, sector-tested experience across the client tiers it serves.</p>
+      <div class="fade-up">
+        <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--b-cyan);">
+          <img src="/images/ivan.jpg" alt="Ivan Wekesa — Founder" style="width:100%;height:340px;object-fit:cover;object-position:top;display:block;"/>
+        </div>
+        <div style="padding:20px 0 0;">
+          <div style="font-size:1.1rem;font-weight:800;color:var(--white);">Ivan Wekesa</div>
+          <div style="font-size:0.87rem;color:var(--cyan);margin:4px 0 12px;">Founder & Lead Analyst</div>
+          <p style="font-size:0.87rem;margin-bottom:14px;">Data analytics professional based in Nairobi with deep expertise in Power BI, Python, and BI architecture. BSc Mathematics & Computer Science, JKUAT. AWS ML & Google Cybersecurity certified.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Qlik Sense</span><span class="tag">ML/TensorFlow</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section section-alt">
+  <section class="section s-alt">
     <div class="container">
-      <p class="section-label" style="text-align:center;">Our Approach</p>
-      <h2 style="text-align:center; max-width:560px; margin:0 auto 48px;">Three principles that define how we work.</h2>
-      <div class="principles-grid">
-        <div class="principle-card">
-          <div class="principle-num">01</div>
-          <h3>Platform, not project</h3>
-          <p>Every engagement is designed to be ongoing. We build data infrastructure that grows with your organization — not dashboards that collect dust after delivery.</p>
+      <span class="label" style="text-align:center;display:block;">Our Approach</span>
+      <h2 style="text-align:center;max-width:540px;margin:0 auto 48px;">Three principles that define how we work.</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div class="fade-up" style="padding:32px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.1em;margin-bottom:14px;">01</div>
+          <h3 style="color:var(--white);margin-bottom:12px;">Platform, not project</h3>
+          <p style="font-size:0.87rem;">We build data infrastructure that grows with your organization — not dashboards that collect dust after delivery.</p>
         </div>
-        <div class="principle-card">
-          <div class="principle-num">02</div>
-          <h3>Actionable, not academic</h3>
-          <p>Our models and dashboards are built to drive decisions, not to impress. If a client can't act on what we build, we haven't done our job.</p>
+        <div class="fade-up" style="padding:32px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.1em;margin-bottom:14px;">02</div>
+          <h3 style="color:var(--white);margin-bottom:12px;">Actionable, not academic</h3>
+          <p style="font-size:0.87rem;">Our models and dashboards are built to drive decisions. If a client can't act on what we build, we haven't done our job.</p>
         </div>
-        <div class="principle-card">
-          <div class="principle-num">03</div>
-          <h3>Regional depth</h3>
-          <p>We understand the East African regulatory environment, market structure, and data realities — from SASRA compliance to M-Pesa transaction data. That context is our advantage.</p>
+        <div class="fade-up" style="padding:32px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--cyan);font-weight:700;letter-spacing:0.1em;margin-bottom:14px;">03</div>
+          <h3 style="color:var(--white);margin-bottom:12px;">Regional depth</h3>
+          <p style="font-size:0.87rem;">We understand SASRA, CBK, M-Pesa, and East African market realities. That context is our competitive advantage.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section section-dark" style="text-align:center;">
+  <section class="section s-mid" style="text-align:center;">
     <div class="container">
-      <h2 style="color:var(--white); max-width:480px; margin:0 auto 16px;">Ready to work with us?</h2>
-      <p style="color:rgba(255,255,255,0.75); max-width:400px; margin:0 auto 36px;">Get in touch and we will talk through what an IONIC engagement looks like for your organization.</p>
-      <a href="/contact" class="btn btn-white">Talk to Us</a>
+      <h2 style="margin-bottom:14px;">Ready to work with us?</h2>
+      <p style="color:var(--muted);max-width:420px;margin:0 auto 32px;">Get in touch and we'll talk through what an Erdem engagement looks like for your organization.</p>
+      <a href="/contact" class="btn btn-cyan">Talk to Us →</a>
     </div>
   </section>
-
 </Layout>
-<style>
-.page-hero { padding: 80px 0 72px; }
-.about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
-.about-text p { margin-bottom: 16px; }
-.about-text strong { color: var(--teal-dark); }
-.founder-card { background: var(--off-white); border: 1px solid #E5E7EB; border-radius: var(--radius-lg); padding: 32px; text-align: center; }
-.founder-avatar { margin-bottom: 16px; display: flex; justify-content: center; }
-.avatar-placeholder { width: 72px; height: 72px; border-radius: 50%; background: var(--teal-mid); color: var(--white); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-.founder-card h3 { color: var(--teal-dark); margin-bottom: 4px; }
-.founder-title { font-size: 0.85rem; color: var(--teal-mid); font-weight: 600; margin-bottom: 16px; }
-.founder-bio { font-size: 0.88rem; margin-bottom: 12px; text-align: left; }
-.principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-.principle-card { background: var(--white); border: 1px solid #E5E7EB; border-radius: var(--radius-md); padding: 32px; }
-.principle-num { font-size: 0.75rem; font-weight: 700; color: var(--teal-bright); letter-spacing: 0.1em; margin-bottom: 12px; }
-.principle-card h3 { color: var(--teal-dark); margin-bottom: 10px; }
-@media (max-width: 768px) {
-  .about-grid { grid-template-columns: 1fr; }
-}
-</style>
+<style>@media(max-width:900px){[style*="grid-template-columns:1fr 360px"],[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}}</style>
