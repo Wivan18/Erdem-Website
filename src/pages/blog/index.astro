@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Insights" description="Data analytics, BI, and AI insights for East African businesses, SACCOs, and NGOs from the IONIC team.">
+
+  <section class="page-hero section-dark">
+    <div class="container">
+      <p class="section-label" style="color:var(--cyan);">Insights</p>
+      <h1 style="color:var(--white); max-width:600px;">Practical intelligence for data-driven organizations.</h1>
+      <p style="color:rgba(255,255,255,0.75); max-width:500px; margin-top:16px;">
+        No filler. Every article is based on real work across East African businesses, SACCOs, and NGOs.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <a href="/blog/power-bi-vs-qlik-east-africa" class="blog-card">
+          <div class="blog-meta">
+            <span class="tag tag-teal">Tools</span>
+            <span class="blog-date">June 2025</span>
+          </div>
+          <h2>Qlik Sense vs Power BI: Which is Right for East African Businesses?</h2>
+          <p>Both platforms deliver powerful dashboards — but for SMEs and financial institutions in Kenya, the right choice comes down to five factors most comparisons ignore: data pipeline complexity, licensing model, local technical support, client-sharing architecture, and total cost at scale.</p>
+          <span class="blog-read">Read Article →</span>
+        </a>
+
+        <a href="/blog/sacco-sasra-dashboard" class="blog-card">
+          <div class="blog-meta">
+            <span class="tag tag-teal">SACCOs</span>
+            <span class="blog-date">June 2025</span>
+          </div>
+          <h2>How SACCOs Can Meet SASRA Reporting Requirements with Dashboards</h2>
+          <p>SASRA compliance reporting is one of the most time-consuming recurring obligations for deposit-taking SACCOs in Kenya. Here is how a well-built data pipeline and Power BI dashboard can cut reporting time from weeks to hours — while eliminating manual reconciliation errors.</p>
+          <span class="blog-read">Read Article →</span>
+        </a>
+
+        <a href="/blog/loan-portfolio-monitoring-microfinance" class="blog-card">
+          <div class="blog-meta">
+            <span class="tag tag-teal">Microfinance</span>
+            <span class="blog-date">June 2025</span>
+          </div>
+          <h2>Automating Loan Portfolio Monitoring for Microfinance Institutions</h2>
+          <p>Most microfinance institutions in East Africa are still monitoring their loan portfolios from static Excel files updated weekly or monthly. This creates a dangerous lag between what is happening in the portfolio and what management can see. Here is how to close that gap with automation.</p>
+          <span class="blog-read">Read Article →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+<style>
+.page-hero { padding: 80px 0 72px; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.blog-card { display: block; color: inherit; background: var(--white); border: 1px solid #E5E7EB; border-radius: var(--radius-lg); padding: 32px; transition: box-shadow 0.2s, transform 0.2s; }
+.blog-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.blog-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.blog-date { font-size: 0.78rem; color: var(--gray-mid); }
+.blog-card h2 { font-size: 1.15rem; color: var(--teal-dark); margin-bottom: 12px; line-height: 1.4; }
+.blog-card p { font-size: 0.9rem; margin-bottom: 20px; }
+.blog-read { font-size: 0.88rem; font-weight: 600; color: var(--teal-mid); }
+</style>

@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact" description="Get in touch with IONIC to discuss your data analytics and business intelligence needs.">
+
+  <section class="page-hero section-dark">
+    <div class="container">
+      <p class="section-label" style="color:var(--cyan);">Get in Touch</p>
+      <h1 style="color:var(--white); max-width:580px;">Let's talk about your data.</h1>
+      <p style="color:rgba(255,255,255,0.75); max-width:480px; margin-top:16px; font-size:1.05rem;">
+        Tell us about your organization and the challenges you're facing. We'll respond within one business day.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+
+      <!-- FORM -->
+      <div class="contact-form-wrap">
+        <h2 style="margin-bottom:8px; color:var(--teal-dark);">Send us a message</h2>
+        <p style="margin-bottom:32px;">We'll come back to you with a clear view of what an IONIC engagement could look like for your organization.</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Mwangi" />
+            </div>
+            <div class="form-group">
+              <label for="org">Organization *</label>
+              <input type="text" id="org" name="organization" required placeholder="Nairobi SACCO Ltd" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="jane@organization.co.ke" />
+            </div>
+            <div class="form-group">
+              <label for="sector">Sector</label>
+              <select id="sector" name="sector">
+                <option value="">Select your sector</option>
+                <option>SACCO / Microfinance</option>
+                <option>Manufacturing</option>
+                <option>Distribution</option>
+                <option>Multi-Branch Retail</option>
+                <option>Insurance</option>
+                <option>NGO / Development</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service of Interest</label>
+            <select id="service" name="service">
+              <option value="">What are you looking for?</option>
+              <option>Business Dashboards & Analysis</option>
+              <option>AI Agents & Data Automation</option>
+              <option>Predictive Modeling</option>
+              <option>Location-Based Insights</option>
+              <option>Survey & Feedback Analysis</option>
+              <option>Data Collection & Organization</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your data challenge *</label>
+            <textarea id="message" name="message" required rows="5" placeholder="What data are you working with? What decisions are you struggling to make? What's currently taking too long?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px;">Send Message</button>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>Direct Contact</h3>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:hello@ionic.co.ke" class="contact-value">hello@ionic.co.ke</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">💬</span>
+            <div>
+              <p class="contact-label">WhatsApp</p>
+              <a href="https://wa.me/254716404849" target="_blank" rel="noopener" class="contact-value">+254 716 404 849</a>
+              <p style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Click to open WhatsApp</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <p class="contact-label">Location</p>
+              <p class="contact-value">Nairobi, Kenya</p>
+              <p style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Serving all of East Africa</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card" style="margin-top:24px;">
+          <h3>What happens next?</h3>
+          <div class="next-step">
+            <span class="step-num">1</span>
+            <p>We review your message and come back within one business day.</p>
+          </div>
+          <div class="next-step">
+            <span class="step-num">2</span>
+            <p>We schedule a short discovery call to understand your data and goals.</p>
+          </div>
+          <div class="next-step">
+            <span class="step-num">3</span>
+            <p>We propose a clear engagement — what we will build, the timeline, and the retainer structure.</p>
+          </div>
+        </div>
+
+        <div class="whatsapp-cta">
+          <a href="https://wa.me/254716404849?text=Hi%20IONIC%2C%20I%27d%20like%20to%20discuss%20my%20data%20analytics%20needs." target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; justify-content:center; gap:10px;">
+            <span>💬</span> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+<style>
+.page-hero { padding: 80px 0 72px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.88rem; font-weight: 600; color: var(--dark-text); }
+.form-group input, .form-group select, .form-group textarea {
+  border: 1.5px solid #D1D5DB;
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  color: var(--dark-text);
+  background: var(--white);
+  transition: border-color 0.15s;
+  outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal-mid); }
+.form-group textarea { resize: vertical; }
+.info-card { background: var(--off-white); border: 1px solid #E5E7EB; border-radius: var(--radius-lg); padding: 28px; }
+.info-card h3 { color: var(--teal-dark); margin-bottom: 20px; font-size: 1rem; }
+.contact-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.contact-icon { font-size: 1.3rem; margin-top: 2px; }
+.contact-label { font-size: 0.78rem; color: var(--gray-mid); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+.contact-value { font-size: 0.95rem; font-weight: 600; color: var(--teal-mid); }
+a.contact-value:hover { text-decoration: underline; }
+.next-step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+.step-num { min-width: 28px; height: 28px; background: var(--teal-mid); color: var(--white); border-radius: 50%; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.next-step p { font-size: 0.9rem; }
+.whatsapp-cta { margin-top: 24px; }
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
