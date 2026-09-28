@@ -1,6 +1,100 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Insights — Erdem Analytics">
-  <section class="page-hero"><div class="container"><a href="/blog" class="back-link">← All Insights</a><h1 style="color:var(--white);">Full article coming soon.</h1></div></section>
+<Layout title="Automating Loan Portfolio Monitoring for Microfinance Institutions" description="How microfinance institutions in East Africa can close the visibility gap in loan portfolio monitoring using automated dashboards and AI alerts.">
+  <section class="page-hero">
+    <div class="container">
+      <a href="/blog" class="back-link">← All Insights</a>
+      <span class="tag" style="margin-bottom:16px;display:inline-block;">Microfinance</span>
+      <h1>Automating Loan Portfolio Monitoring<br/><span class="cyan">for Microfinance Institutions</span></h1>
+      <p style="margin-top:16px;max-width:580px;">Most MFIs in East Africa are still monitoring their loan portfolios from static Excel files updated weekly. This creates a dangerous lag. Here's how to close that visibility gap with automation.</p>
+      <div style="font-size:0.8rem;color:var(--dim);margin-top:16px;">7 min read</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;">
+      <div class="prose" style="max-width:700px;">
+        <p>The loan portfolio is the engine of every microfinance institution. It drives revenue, determines risk exposure, and is the primary focus of CBK regulatory scrutiny for licensed MFIs in Kenya. And yet, for most MFIs operating in East Africa, visibility into the portfolio is shockingly limited.</p>
+        <p>Loan officers update spreadsheets weekly. Credit managers compile portfolio reports monthly. By the time a concerning trend — rising PAR, concentration in a single sector, a loan officer with unusually high delinquency — reaches management attention, the window for easy intervention has already closed.</p>
+        <p>This is not a data problem. The data exists. It is a visibility problem — and it is entirely solvable.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">The Visibility Gap and What It Costs</h2>
+        <p>The gap between when a loan starts deteriorating and when management becomes aware of it is where most MFI credit losses originate. A borrower who misses a first payment has a very different recovery profile from one who has accumulated 60 days of arrears — but if the portfolio report only arrives monthly, those two situations look identical until the month-end data arrives.</p>
+        <p>The cost of this lag is measurable. Early-stage delinquency (1–30 days) has recovery rates typically above 80% with proactive outreach. By the time arrears reach 90+ days, recovery rates drop significantly and provisioning requirements kick in, directly impacting the MFI's capital position.</p>
+        <p>The CBK Microfinance Act also imposes specific requirements around single-borrower limits, insider lending restrictions, and capital-to-risk-weighted-assets ratios. Monitoring these manually — against a portfolio that changes daily — is both time-consuming and error-prone.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">What Automated Portfolio Monitoring Looks Like</h2>
+        <p>A well-designed loan portfolio monitoring system for an MFI has four components:</p>
+
+        <h3 style="color:var(--cyan);font-size:1.05rem;margin:1.5rem 0 0.75rem;">1. A Daily Data Pipeline</h3>
+        <p>Rather than waiting for weekly spreadsheet updates, an automated pipeline pulls loan data from the MFI's core system every day — repayments made, new disbursements, outstanding balances, and aging classifications. The pipeline handles data cleaning and standardisation so that by the time it reaches the dashboard, it is accurate and consistent.</p>
+        <p>This is not technically complex for most MFIs. The majority of MFI management systems — whether built on SQL databases, Excel exports, or cloud platforms — can be connected to a Python-based extraction script without any modification to the core system.</p>
+
+        <h3 style="color:var(--cyan);font-size:1.05rem;margin:1.5rem 0 0.75rem;">2. A Live Portfolio Dashboard</h3>
+        <p>The dashboard gives credit managers, the CEO, and board members a real-time view of the key portfolio metrics that drive decisions:</p>
+        <ul style="margin-left:1.5rem;display:flex;flex-direction:column;gap:8px;margin-bottom:1rem;">
+          <li style="color:var(--muted);line-height:1.7;">Portfolio at Risk (PAR) by aging bucket — 1–30, 31–90, 90+ days</li>
+          <li style="color:var(--muted);line-height:1.7;">Gross loan portfolio and disbursement trends</li>
+          <li style="color:var(--muted);line-height:1.7;">Repayment rate by loan product, branch, and loan officer</li>
+          <li style="color:var(--muted);line-height:1.7;">Single-borrower exposure against CBK limits</li>
+          <li style="color:var(--muted);line-height:1.7;">Insider lending flags</li>
+          <li style="color:var(--muted);line-height:1.7;">Write-off and recovery rates</li>
+        </ul>
+        <p>These metrics update daily — not monthly. Management sees the portfolio as it actually is, not as it was three weeks ago.</p>
+
+        <h3 style="color:var(--cyan);font-size:1.05rem;margin:1.5rem 0 0.75rem;">3. An Early Warning System</h3>
+        <p>This is where the biggest risk reduction happens. An AI agent monitors the portfolio dataset daily and flags borrowers who are showing early signs of deterioration — a first missed payment, a pattern of partial payments, or a borrower whose repayment behaviour has changed significantly from their historical pattern.</p>
+        <p>These flags are surfaced to loan officers and credit managers in the dashboard, with enough lead time (typically 30–60 days before formal delinquency classification) to make proactive outreach effective. A phone call at day 5 of arrears is far more productive than a collection letter at day 90.</p>
+
+        <h3 style="color:var(--cyan);font-size:1.05rem;margin:1.5rem 0 0.75rem;">4. Automated CBK Compliance Reporting</h3>
+        <p>The same dataset that powers the dashboard also generates the structured reports required by CBK — capital adequacy, liquidity ratios, single-borrower limit compliance, and insider lending disclosures. These are auto-populated from the live data, reviewed, and submitted — replacing a manual compilation process that can take 1–2 weeks with a process that takes a day.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">What This Requires From the MFI</h2>
+        <p>The most common question we hear is: "Our data is messy — can this still work?" The answer is yes, with one caveat.</p>
+        <p>Automated pipeline and dashboard systems do not require perfect data to start. They do require consistent data — data that is captured in the same format, for the same fields, across all branches and loan officers. If the MFI has significant data quality issues, those need to be addressed as part of the data organisation phase before meaningful dashboards can be built.</p>
+        <p>Erdem conducts a data audit as the first step of every MFI engagement. For most institutions, the audit takes one to two weeks and identifies exactly what needs to be cleaned before the pipeline can be built.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">The Timeline and Investment</h2>
+        <p>For a typical MFI with a portfolio of 500–5,000 active loans:</p>
+        <ul style="margin-left:1.5rem;display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem;">
+          <li style="color:var(--muted);line-height:1.7;">Data audit and pipeline setup: 2–3 weeks</li>
+          <li style="color:var(--muted);line-height:1.7;">Dashboard build and testing: 2 weeks</li>
+          <li style="color:var(--muted);line-height:1.7;">Go-live and staff training: 1 week</li>
+        </ul>
+        <p>Total time to a live, functioning portfolio monitoring system: 5–6 weeks from engagement start. Ongoing retainer covers pipeline maintenance, dashboard updates, and model retraining as the portfolio grows.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">The Bottom Line</h2>
+        <p>Microfinance is a data-intensive business operating in a fast-moving credit environment. The institutions that will manage risk most effectively over the next decade are those that can see their portfolios clearly — not once a month, but every day.</p>
+        <p>The technology to do this is available, affordable, and deployable in weeks. The question is not whether your MFI can afford automated portfolio monitoring. It is whether you can afford not to have it.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:88px;">
+        <div style="padding:20px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">In This Article</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">The Visibility Gap</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">Daily Data Pipeline</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">Live Portfolio Dashboard</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">Early Warning System</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">CBK Compliance Reporting</a></li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Related</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li><a href="/blog/sacco-sasra-dashboard" style="font-size:0.85rem;color:var(--cyan);line-height:1.5;">How SACCOs Can Meet SASRA Requirements</a></li>
+            <li><a href="/blog/power-bi-vs-qlik-east-africa" style="font-size:0.85rem;color:var(--cyan);line-height:1.5;">Qlik Sense vs Power BI for East Africa</a></li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid var(--b-cyan);border-radius:var(--r-lg);background:rgba(0,212,224,0.04);">
+          <h4 style="color:var(--white);font-size:0.9rem;margin-bottom:10px;">Is your portfolio visible enough to manage?</h4>
+          <p style="font-size:0.84rem;margin-bottom:14px;">Talk to Erdem about automated loan monitoring for your MFI.</p>
+          <a href="/contact" class="btn btn-cyan" style="width:100%;justify-content:center;font-size:0.84rem;">Talk to Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+<style>
+@media(max-width:900px){[style*="grid-template-columns:1fr 260px"]{grid-template-columns:1fr!important}[style*="position:sticky"]{position:static!important}}
+.prose p{margin-bottom:1.2rem}
+</style>

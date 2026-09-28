@@ -1,6 +1,81 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Insights — Erdem Analytics">
-  <section class="page-hero"><div class="container"><a href="/blog" class="back-link">← All Insights</a><h1 style="color:var(--white);">Full article coming soon.</h1></div></section>
+<Layout title="Qlik Sense vs Power BI for East African Businesses" description="A practical comparison of Qlik Sense vs Power BI for SMEs and financial institutions in Kenya and East Africa.">
+  <section class="page-hero">
+    <div class="container">
+      <a href="/blog" class="back-link">← All Insights</a>
+      <span class="tag" style="margin-bottom:16px;display:inline-block;">Tools</span>
+      <h1>Qlik Sense vs Power BI:<br/><span class="cyan">Which is Right for East African Businesses?</span></h1>
+      <p style="margin-top:16px;max-width:580px;">Both platforms deliver powerful dashboards — but for SMEs and financial institutions in Kenya, the right choice comes down to five factors most comparisons ignore.</p>
+      <div style="font-size:0.8rem;color:var(--dim);margin-top:16px;">8 min read</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;">
+      <div class="prose" style="max-width:700px;">
+        <p>If you search "Qlik vs Power BI" you will find dozens of comparison articles written for enterprise IT teams in the US or Europe. They compare feature sets, governance models, and enterprise pricing — none of which is particularly useful if you are a SACCO in Nairobi trying to automate your SASRA reporting, or a manufacturer in Mombasa trying to track raw material costs across three product lines.</p>
+        <p>This comparison is written for East African organisations. We have worked with both platforms extensively and the decision comes down to five factors that most generic comparisons overlook.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">1. Licensing Model and Total Cost</h2>
+        <p>This is where the decision starts for most East African organisations — and where Power BI wins decisively at the entry level.</p>
+        <p><strong style="color:var(--white);">Power BI</strong> costs approximately $14 per user per month when bundled with Microsoft 365, or $24 per user per month as a standalone product. For a SACCO with 3–5 staff accessing dashboards, that is KSh 5,000–15,000 per month. Power BI also offers a free Desktop version for report development, which means Erdem can build and test dashboards at no licensing cost to the client.</p>
+        <p><strong style="color:var(--white);">Qlik Sense</strong> starts at approximately $300 per month for 1–10 users. For small and mid-sized organisations in Kenya, this is a significant commitment — particularly when a client is still evaluating whether dashboards will deliver value.</p>
+        <div style="border-left:2px solid var(--cyan);padding:12px 16px;background:rgba(0,212,224,0.05);border-radius:0 var(--r-sm) var(--r-sm) 0;margin:20px 0;font-size:0.9rem;color:var(--muted);">For organisations signing their first analytics retainer, Power BI's licensing economics are far more appropriate. Qlik Sense becomes worth the premium at scale — typically once an organisation has 20+ active dashboard users.</div>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">2. Data Pipeline Complexity</h2>
+        <p>Both platforms consume data from external sources — Excel files, databases, APIs, and CSV exports. The difference is in how they handle messy, incomplete, or inconsistently formatted data, which is the reality for most East African organisations that have not yet invested in structured data infrastructure.</p>
+        <p><strong style="color:var(--white);">Power BI's Power Query</strong> is one of the most capable data transformation tools available at this price point. It allows Erdem to clean, reshape, and combine data from multiple sources without writing complex code — which significantly reduces build time and makes pipelines easier to maintain as the client's data changes.</p>
+        <p><strong style="color:var(--white);">Qlik's scripting model</strong> is more powerful for complex data transformations but requires a higher level of technical skill to implement well. For clients whose data is still maturing — which describes the majority of SMEs and SACCOs we work with — Power Query's accessibility is a genuine advantage.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">3. Client-Sharing Architecture</h2>
+        <p>How do you share dashboards with clients or board members who do not have their own BI software licenses? This is a practical constraint that rarely comes up in enterprise comparisons but is critical for an analytics provider working with East African organisations.</p>
+        <p><strong style="color:var(--white);">Power BI + Looker Studio</strong> is the architecture Erdem uses. We develop and maintain dashboards in Power BI, then publish the output to Looker Studio via Google Sheets or BigQuery as a bridge layer. Looker Studio is free and requires no license for viewers — board members and management can access live dashboards in any browser without an account or software installation.</p>
+        <p><strong style="color:var(--white);">Qlik Sense</strong> requires viewer licenses for anyone who accesses a dashboard, which adds cost and friction for external sharing.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">4. Local Technical Support and Ecosystem</h2>
+        <p>When something breaks — and at some point, something always breaks — how easy is it to find help?</p>
+        <p>Power BI has a significantly larger community in East Africa. Microsoft's broader presence in the region means local training, certified professionals, and active online communities in Swahili and English. When Erdem's clients need to build internal capacity alongside our retainer engagement, Power BI training resources are far more accessible.</p>
+        <p>Qlik has a strong global community but a thinner local presence in Kenya and East Africa. For organisations that want to build in-house BI capability over time, this matters.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">5. Long-Term Platform Strategy</h2>
+        <p>This is the one factor that cuts in Qlik's favour — and it is worth being honest about.</p>
+        <p>Qlik's associative data model is genuinely more powerful than Power BI's for complex exploratory analysis. If your organisation is heading toward a future where analysts are doing sophisticated cross-dimensional data exploration — not just monitoring pre-built dashboards — Qlik Sense offers capabilities that Power BI cannot match at the same level.</p>
+        <p>Erdem's own long-term platform roadmap includes Qlik OEM as a client-facing delivery layer once our recurring revenue justifies the licensing model.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">Our Recommendation</h2>
+        <p>For the vast majority of East African SMEs, SACCOs, microfinance institutions, and NGOs: <strong style="color:var(--white);">start with Power BI.</strong> The licensing economics, data pipeline tooling, sharing architecture, and local ecosystem all point in the same direction for organisations in the early-to-mid stages of their analytics journey.</p>
+        <p>Qlik Sense becomes the right conversation when an organisation has reached a scale where 20+ users need dashboard access, data complexity has grown significantly beyond structured Excel-to-dashboard pipelines, and the budget for a more powerful platform is justified by demonstrated ROI.</p>
+        <p>The most important thing is not which platform you choose — it is whether the dashboards you build on that platform are actually driving decisions. That is the standard Erdem holds itself to regardless of the tool.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:88px;">
+        <div style="padding:20px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">In This Article</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">1. Licensing & Cost</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">2. Data Pipeline</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">3. Client Sharing</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">4. Local Ecosystem</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">5. Long-term Strategy</a></li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Related Articles</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li><a href="/blog/sacco-sasra-dashboard" style="font-size:0.85rem;color:var(--cyan);line-height:1.5;">How SACCOs Can Meet SASRA Requirements with Dashboards</a></li>
+            <li><a href="/blog/loan-portfolio-monitoring-microfinance" style="font-size:0.85rem;color:var(--cyan);line-height:1.5;">Automating Loan Portfolio Monitoring</a></li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid var(--b-cyan);border-radius:var(--r-lg);background:rgba(0,212,224,0.04);">
+          <h4 style="color:var(--white);font-size:0.9rem;margin-bottom:10px;">Not sure which platform fits?</h4>
+          <p style="font-size:0.84rem;margin-bottom:14px;">Talk to Erdem — we'll assess your data situation and recommend the right stack.</p>
+          <a href="/contact" class="btn btn-cyan" style="width:100%;justify-content:center;font-size:0.84rem;">Talk to Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+<style>
+@media(max-width:900px){[style*="grid-template-columns:1fr 260px"]{grid-template-columns:1fr!important}[style*="position:sticky"]{position:static!important}}
+.prose p{margin-bottom:1.2rem}
+</style>

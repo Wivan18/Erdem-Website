@@ -1,6 +1,99 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Insights — Erdem Analytics">
-  <section class="page-hero"><div class="container"><a href="/blog" class="back-link">← All Insights</a><h1 style="color:var(--white);">Full article coming soon.</h1></div></section>
+<Layout title="How SACCOs Can Meet SASRA Reporting Requirements with Dashboards" description="A practical guide to automating SASRA compliance reporting for deposit-taking SACCOs in Kenya using Power BI.">
+  <section class="page-hero">
+    <div class="container">
+      <a href="/blog" class="back-link">← All Insights</a>
+      <span class="tag" style="margin-bottom:16px;display:inline-block;">SACCOs</span>
+      <h1>How SACCOs Can Meet SASRA<br/><span class="cyan">Reporting Requirements with Dashboards</span></h1>
+      <p style="margin-top:16px;max-width:580px;">SASRA compliance reporting is one of the most time-consuming recurring obligations for deposit-taking SACCOs in Kenya. Here is how a well-built data pipeline cuts reporting time from weeks to hours.</p>
+      <div style="font-size:0.8rem;color:var(--dim);margin-top:16px;">7 min read</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;">
+      <div class="prose" style="max-width:700px;">
+        <p>Every deposit-taking SACCO in Kenya operates under the regulatory oversight of the SACCO Societies Regulatory Authority (SASRA). That means quarterly prudential returns, regular portfolio disclosures, and the ever-present risk of penalties for late or inaccurate submissions.</p>
+        <p>For most SACCOs, meeting these requirements means a multi-week process of manually extracting data from loan ledgers, reconciling figures across Excel files, and assembling reports that are often already outdated by the time they are submitted. It is a process that consumes significant staff time and introduces unnecessary error risk.</p>
+        <p>There is a better way.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">What SASRA Actually Requires</h2>
+        <p>SASRA's regulatory framework for deposit-taking SACCOs covers several key reporting areas:</p>
+        <ul style="margin-left:1.5rem;display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem;">
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Prudential ratios</strong> — capital adequacy, liquidity ratios, and institutional capital requirements, all of which must stay within defined thresholds.</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Loan portfolio quality</strong> — portfolio at risk (PAR) ratios, non-performing loan (NPL) classifications, and provisioning levels.</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Member and deposit data</strong> — member counts, deposit volumes, and trends across reporting periods.</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Financial statements</strong> — balance sheet, income statement, and cash flow data in the format SASRA specifies.</li>
+        </ul>
+        <p>The challenge is not that this data does not exist — it does, somewhere in your SACCO's systems. The challenge is that it is rarely structured in a way that makes extraction and reporting straightforward.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">The Manual Reporting Problem</h2>
+        <p>Here is what manual SASRA reporting typically looks like for a mid-sized SACCO:</p>
+        <ul style="margin-left:1.5rem;display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem;">
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Week 1:</strong> Extract loan data from the SACCO management system, manually classify loans by aging bucket (current, 1–30 days, 31–90 days, 90+ days).</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Week 2:</strong> Reconcile member account data, pull deposit figures, and cross-check against branch records.</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Week 3:</strong> Assemble financial statements, compute prudential ratios manually, format everything to SASRA's template, and review for errors before submission.</li>
+        </ul>
+        <p>By the time the report is submitted, the data is three weeks old. And if SASRA requests a clarification or correction, the cycle starts again.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">What a Dashboard-Driven Approach Looks Like</h2>
+        <p>A well-built analytics pipeline eliminates the manual assembly work entirely. Here is how Erdem approaches it:</p>
+
+        <h3 style="color:var(--cyan);font-size:1.05rem;margin:1.5rem 0 0.75rem;">Step 1 — Automate Data Extraction</h3>
+        <p>A Python script connects to the SACCO's management system and pulls loan, member, and financial data on a daily or weekly schedule. The script handles deduplication, date formatting, and classification — so by the time data reaches the dashboard layer, it is already clean and structured.</p>
+
+        <h3 style="color:var(--cyan);font-size:1.05rem;margin:1.5rem 0 0.75rem;">Step 2 — Build the Compliance Dashboard</h3>
+        <p>A Power BI dashboard monitors the SASRA prudential ratios in real time — capital adequacy, liquidity ratio, NPL ratio, and PAR by aging bucket — with red/amber/green status indicators showing which metrics are within threshold and which require attention. Management can see the SACCO's regulatory position at any time, not just at quarter-end.</p>
+
+        <h3 style="color:var(--cyan);font-size:1.05rem;margin:1.5rem 0 0.75rem;">Step 3 — Auto-Generate the Regulatory Return</h3>
+        <p>When the quarterly submission window opens, the data needed is already structured and up to date. The SASRA return is generated directly from the dashboard dataset — what previously took three weeks now takes one day, with significantly lower error risk because there is no manual transcription step.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">The Benefits Beyond Compliance</h2>
+        <p>The compliance automation is the most immediate value, but it is not the only one. Once the data pipeline is in place:</p>
+        <ul style="margin-left:1.5rem;display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem;">
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Management gets real-time portfolio visibility</strong> — not a quarterly snapshot but a daily view of loan performance, repayment trends, and portfolio health.</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">The credit team can identify deteriorating loans early</strong> — before they cross into NPL classification and trigger provisioning requirements.</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">The board receives live data before every meeting</strong> — replacing printed paper packs with a dashboard accessible on any device.</li>
+          <li style="color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Audit preparation becomes straightforward</strong> — because the data trail is clean, consistent, and documented throughout the year.</li>
+        </ul>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">What This Costs vs. What It Saves</h2>
+        <p>A typical Erdem engagement for a SACCO of 2,000–10,000 members is structured on a monthly retainer of KSh 30,000–60,000, covering the dashboard build, pipeline maintenance, and ongoing analytics support. Against the cost of 3+ weeks of staff time consumed by manual reporting every quarter — and the risk of regulatory penalties for late or inaccurate submissions — the economics are straightforward.</p>
+        <p>More importantly, the staff time freed from manual reporting is redirected to member engagement, loan recovery, and the work that actually grows the SACCO.</p>
+
+        <h2 style="color:var(--white);font-size:1.4rem;margin:2rem 0 1rem;">Getting Started</h2>
+        <p>The starting point for any SACCO considering this approach is a data audit — understanding what systems hold which data, how clean it is, and what gaps exist. Erdem conducts this as part of the discovery phase of every engagement, and it typically takes one to two weeks before dashboard development begins.</p>
+        <p>If your SACCO is spending more than a week every quarter assembling regulatory reports, that time is a cost you do not have to carry.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:88px;">
+        <div style="padding:20px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">In This Article</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">What SASRA Requires</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">The Manual Problem</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">Dashboard-Driven Approach</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">Benefits Beyond Compliance</a></li>
+            <li><a href="#" style="font-size:0.85rem;color:var(--muted);">Cost vs. Savings</a></li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,0.02);">
+          <div style="font-size:0.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Related</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li><a href="/case-studies/feed-manufacturer" style="font-size:0.85rem;color:var(--cyan);line-height:1.5;">Case Study: From Ledger Books to Loan Intelligence</a></li>
+            <li><a href="/blog/loan-portfolio-monitoring-microfinance" style="font-size:0.85rem;color:var(--cyan);line-height:1.5;">Automating Loan Portfolio Monitoring</a></li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid var(--b-cyan);border-radius:var(--r-lg);background:rgba(0,212,224,0.04);">
+          <h4 style="color:var(--white);font-size:0.9rem;margin-bottom:10px;">Is your SACCO spending weeks on SASRA reporting?</h4>
+          <p style="font-size:0.84rem;margin-bottom:14px;">Talk to Erdem about automating your compliance pipeline.</p>
+          <a href="/contact" class="btn btn-cyan" style="width:100%;justify-content:center;font-size:0.84rem;">Talk to Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+<style>
+@media(max-width:900px){[style*="grid-template-columns:1fr 260px"]{grid-template-columns:1fr!important}[style*="position:sticky"]{position:static!important}}
+.prose p{margin-bottom:1.2rem}
+</style>
